@@ -21,7 +21,7 @@
       repo: '',
       coverpage: true,
       loadSidebar: true,
-      subMaxLevel: 6,
+      subMaxLevel: 3,
 
       // 设置页脚
       footer: {
@@ -34,7 +34,7 @@
       // 设置高亮文本框样式
       'flexible-alerts': {
         note: {
-          label: "提示",
+          label: "思考",
           className: 'note_self'
         },
         tip: {
@@ -42,11 +42,11 @@
           className: 'tip_self'
         },
         warning: {
-          label: "注意",
+          label: "提示",
           className: 'warning_self'
         },
         attention: {
-          label: "警告",
+          label: "注意",
           className: "attention_self"
         }
       },
@@ -60,6 +60,10 @@
       latex: {
         inlineMath   : [['$', '$'], ['\\(', '\\)']], // default
         displayMath  : [['$$', '$$']],               // default
+      },
+
+      mermaidConfig: {
+        querySelector: ".mermaid"
       }
     }
   </script>
@@ -67,7 +71,7 @@
   <script src="//cdn.jsdelivr.net/npm/docsify@4"></script>
   <!-- mermaid插件 -->
   <script type="module">
-    import mermaid from "https://cdn.bootcdn.net/ajax/libs/mermaid/10.1.0/mermaid.esm.min.mjs";
+    import mermaid from "https://cdn.jsdelivr.net/npm/mermaid@10/dist/mermaid.esm.min.mjs";
     mermaid.initialize({ startOnLoad: true });
     window.mermaid = mermaid;
   </script>
@@ -84,7 +88,9 @@
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-c.min.js"></script>
   <script src="//cdn.jsdelivr.net/npm/prismjs@1/components/prism-cpp.min.js"></script>
   <!-- 数学公式 -->
-  <script src="//cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+  <!-- Docsify script Here -->
+  <script src="https://cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.js"></script>
+  <link rel="stylesheet" href="//cdn.jsdelivr.net/npm/katex@latest/dist/katex.min.css" />
   <script src="//cdn.jsdelivr.net/npm/docsify-latex@0"></script>
   <!-- 返回顶部 -->
   <script src="//unpkg.com/docsify-scroll-to-top/dist/docsify-scroll-to-top.min.js"></script>

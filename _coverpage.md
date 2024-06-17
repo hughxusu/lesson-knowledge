@@ -8,7 +8,7 @@
 
 # 编程百艺
 
-**授课教师：徐夙** 
+**授课教师：[徐夙](https://hughxusu.github.io/lesson-index/#/c-teacher)** 
 
 [开始学习](README)
 
