@@ -4,7 +4,7 @@
     * [简介](regular/1-简介.md)
 * Git与Github
     * [Git基础](git/01-简介.md)
-    * [Github](git/02-github.md)
+    * [开源软件与Github](git/02-github.md)
     * [分支管理](git/03-分支.md)
     * [Sourcetree的使用](git/04-sourcetree.md)
 * 提示词工程
