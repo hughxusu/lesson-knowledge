@@ -2,7 +2,7 @@
 
 ##  什么是开源
 
-<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/developing/_images/git/Open-Source-vs.-Closed-Source.jpg" style="zoom: 55%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/git/Open-Source-vs.-Closed-Source.jpg" style="zoom: 55%;" />
 
 开源软件：开放源代码
 
@@ -73,7 +73,7 @@ Github是全球最大的开源项目托管平台。因为只支持Git作为唯�
 
 #### 创建远程仓库
 
-<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/developing/_images/git/Xnip2024-11-13_14-31-46.jpg" style="zoom:35%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/git/Xnip2024-11-13_14-31-46.jpg" style="zoom:35%;" />
 
 > [!warning]
 >
@@ -92,7 +92,7 @@ Github上的远程仓库，有两种访问方式，分别是HTTPS和SSH。
 
 #### 基于HTTPS上传本地仓库
 
-<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/developing/_images/git/Xnip2024-11-13_14-55-10.jpg" style="zoom:35%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/git/Xnip2024-11-13_14-55-10.jpg" style="zoom:35%;" />
 
 将代码上传到远程仓库
 
@@ -139,13 +139,13 @@ ssh -T git@github.com
 
 #### 基于SSH方式上传仓库
 
-<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/developing/_images/git/Xnip2024-11-13_15-45-52.jpg" style="zoom:35%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/git/Xnip2024-11-13_15-45-52.jpg" style="zoom:35%;" />
 
 #### 将远程仓库代码复制到本地
 
 在Github中找到要复制的仓库
 
-<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/developing/_images/git/Xnip2024-11-13_16-03-53.jpg" style="zoom:35%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/git/Xnip2024-11-13_16-03-53.jpg" style="zoom:35%;" />
 
 在要保存的目录下打开终端（Windows打开Git bash）输入命令
 
