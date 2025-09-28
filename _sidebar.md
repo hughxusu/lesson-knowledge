@@ -3,10 +3,11 @@
 * 正则表达式
     * [简介](docs/regular/1-简介.md)
 * Git与Github
-    * [Git基础](docs/git/01-简介.md)
-    * [开源软件与Github](docs/git/02-github.md)
-    * [分支管理](docs/git/03-分支.md)
-    * [Sourcetree的使用](docs/git/04-sourcetree.md)
+    * [版本控制软件](docs/git/01-简介.md)
+    * [Git基础](docs/git/02-基础.md)
+    * [开源软件与Github](docs/git/03-github.md)
+    * [分支管理](docs/git/04-分支.md)
+    * [Sourcetree的使用](docs/git/05-sourcetree.md)
 * 提示词工程
     * [提示词工程](docs/prompt/1-简介.md)
     * [了解提示词工程](docs/prompt/2-概念.md)
