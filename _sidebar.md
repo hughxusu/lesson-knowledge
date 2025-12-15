@@ -1,7 +1,5 @@
 
 
-* 正则表达式
-    * [简介](docs/regular/1-简介.md)
 * Git与Github
     * [版本控制软件](docs/git/01-简介.md)
     * [Git基础](docs/git/02-基础.md)

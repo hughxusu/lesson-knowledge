@@ -6,7 +6,7 @@
 
 <img src="https://www.ncut.edu.cn/images/logo-dh.png"  />
 
-# 编程百艺
+# 编程通识
 
 **授课教师：[徐夙](https://hughxusu.github.io/lesson-index/#/c-teacher)** 
 
