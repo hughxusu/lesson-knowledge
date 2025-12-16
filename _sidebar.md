@@ -6,6 +6,15 @@
     * [开源软件与Github](docs/01-git/03-github.md)
     * [分支管理](docs/01-git/04-分支.md)
     * [Sourcetree的使用](docs/01-git/05-sourcetree.md)
+
+* 数据库
+    * 数据库的基本使用
+        *  [认识数据库](docs/02-数据库/a-基础/a-概述.md)
+        *  [MySQL安装](docs/02-数据库/a-基础/b-安装.md)
+
+* Docker
+    * [Docker安装与配置](docs/03-docker/a-安装.md)
+
     
 
 
