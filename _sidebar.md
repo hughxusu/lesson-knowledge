@@ -10,7 +10,7 @@
 * 数据库
     * 数据库的基本使用
         *  [认识数据库](docs/02-数据库/a-基础/a-概述.md)
-        *  [MySQL安装](docs/02-数据库/a-基础/b-安装.md)
+        *  [定义数据库](docs/02-数据库/a-基础/b-定义.md)
 
 * Docker
     * [Docker安装与配置](docs/03-docker/a-安装.md)
