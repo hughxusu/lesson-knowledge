@@ -19,7 +19,7 @@ show databases;
 
 在终端中输入
 
-<img src="../../../images/mysql/Xnip2025-12-16_20-02-02.jpg" style="zoom:45%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/mysql/Xnip2025-12-16_20-02-02.jpg" style="zoom:45%;" />
 
 查询当前数据库
 
@@ -91,23 +91,23 @@ use sqllesson;
 
 初始化项目
 
-<img src="../../../images/mysql/Xnip2025-12-16_22-01-33.jpg" style="zoom:40%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/mysql/Xnip2025-12-16_22-01-33.jpg" style="zoom:40%;" />
 
 创建新数据库链接
 
-<img src="../../../images/mysql/Xnip2025-12-16_22-05-56.jpg" style="zoom:40%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/mysql/Xnip2025-12-16_22-05-56.jpg" style="zoom:40%;" />
 
 配置链接信息
 
-<img src="../../../images/mysql/Xnip2025-12-16_22-12-10.jpg" style="zoom:40%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/mysql/Xnip2025-12-16_22-12-10.jpg" style="zoom:40%;" />
 
 选择数据库
 
-<img src="../../../images/mysql/Xnip2025-12-16_22-30-08.jpg" style="zoom:40%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/mysql/Xnip2025-12-16_22-30-08.jpg" style="zoom:40%;" />
 
 使用DataGrip创建数据库
 
-<img src="../../../images/mysql/Xnip2025-12-16_22-33-55.jpg" style="zoom:40%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/mysql/Xnip2025-12-16_22-33-55.jpg" style="zoom:40%;" />
 
 架构（Schema）：数据库的“蓝图”，定义了表的结构，以及表之间的关系，等价于Database。使用如下命令也可以创建数据库
 
@@ -117,7 +117,7 @@ create schema lessons;
 
 SQL命令行
 
-<img src="../../../images/mysql/Xnip2025-12-16_22-41-49.jpg" style="zoom:40%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/mysql/Xnip2025-12-16_22-41-49.jpg" style="zoom:40%;" />
 
 选中数据库
 
