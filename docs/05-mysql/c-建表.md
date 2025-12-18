@@ -22,7 +22,7 @@ create table users(
     id int comment 'ID',
     name varchar(50) comment '用户名',
     gender varchar(1) comment '性别'
-)
+) comment '用户';
 ```
 
 * `table users`表示创建一个用户表。
@@ -78,7 +78,7 @@ DECIMAL(3, 0) # 总位数3，没有小数部分，有效数字范围：-999 到 
 ```
 
 * M（Precision-精度）：总位数，范围1~65。
-* D（Scale-标度）：小数位数，范围 0~30，且 D≤M。
+* D（Scale-标度）：小数位数，范围0~30，且D≤M。
 
 | 特性     | `FLOAT(4,1)`                         | `DECIMAL(4,1)`                 |
 | :------- | :----------------------------------- | :----------------------------- |
@@ -151,4 +151,118 @@ DECIMAL(3, 0) # 总位数3，没有小数部分，有效数字范围：-999 到 
 | `DEFAULT`     | 默认约束               | 保存数据时，如果未指定该字段的值，则采用默认值 |
 | `CHECK`       | 检查约束（8.0.16之后） | 保证字段值满足某一个条件                       |
 | `FOREIGN KEY` | 外键约束               | 用来让两张表的数据之间建立连接，保证数据的一致 |
+
+## 修改表
+
+使用`alter table`可以实现对表的修改操作
+
+### 添加字段
+
+```sql
+alter table users add phone char(11) comment '手机号' unique;
+```
+
+* `users`表名。
+* `add`关键字，表示添加。
+* `phone`字段名称。
+* `char(11)`数据类型。
+* `comment '手机号'`注释。
+* `unique`约束条件。
+
+### 修改数据类型
+
+```sql
+alter table users modify id bigint unsigned primary key auto_increment;
+```
+
+* `modify`关键字，表示修改。
+* `id`字段名称
+* `bigint unsigned`修改后的数据类型。
+* `primary key`修改后的约束。
+* `auto_increment`数据自动增长。
+
+> [!note]
+>
+> `auto_increment`是列属性，每当添加新的数据时，自动增长。
+
+### 修改字段名和字段类型
+
+```sql
+alter table users change name nickname varchar(30) comment '昵称';
+```
+
+* `change`关键字，表示更新。
+* `name`旧列名。
+* `nickname`新列名。
+* `varchar(30)`数据类型
+
+| 特性     | `CHANGE`                 | `MODIFY`           |
+| :------- | :----------------------- | :----------------- |
+| 主要功能 | 可以修改**列名和列定义** | 只能修改**列定义** |
+| 列名修改 | ✅ 支持                   | ❌ 不支持           |
+| 语法     | 需要指定**新旧列名**     | 只需要**列名**     |
+| 标准     | MySQL特有                | 标准SQL            |
+| 使用     | 需要改列名时使用         | 只改定义时使用     |
+
+### 删除字段
+
+```sql
+alter table users drop gender;
+```
+
+* `drop`关键字，删除。
+* `gender`字段名称。
+
+### 修改表名
+
+```sql
+alter table users rename to music_users;
+```
+
+* `rename to`关键字，表示重命名。
+* `music_users`新表名。
+
+### 删除表
+
+```sql
+drop table if exists music_users;
+```
+
+* `drop table`关键字，删除表。
+
+> [!alert]
+>
+> 在删除表的时候，表中的全部数据也都会被删除。
+
+## 表操作的注意事项
+
+### 字段操作顺序
+
+在表创建和修改时，字段操作遵循一定的顺序
+
+```sql
+id                    # 字段名称
+BIGINT UNSIGNED       # 1. 数据类型
+NOT NULL              # 2. NULL属性
+DEFAULT 1             # 3. 默认值
+AUTO_INCREMENT        # 4. 自增
+PRIMARY KEY           # 5. 键约束
+COMMENT '主键ID'       # 6. 注释
+```
+
+> [!warning]
+>
+> 部分属性顺序调整语句仍然可以执行，但上面的顺序表操作的推荐顺序，表的修改和创建都成立。
+
+字符串操作增加了字符集操作
+
+```sql
+username 
+VARCHAR(50)                  # 1. 数据类型
+CHARACTER SET utf8mb4        # 2. 字符集在类型后
+COLLATE utf8mb4_unicode_ci   # 3. 排序规则
+NOT NULL
+DEFAULT ''
+COMMENT '用户名',
+```
 

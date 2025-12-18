@@ -99,7 +99,7 @@ use sqllesson;
 
 配置链接信息
 
-<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/mysql/Xnip2025-12-16_22-12-10.jpg" style="zoom:40%;" />
+<img src="../../images/mysql/Xnip2025-12-18_13-29-32.jpg" style="zoom:80%;" />
 
 选择数据库
 
