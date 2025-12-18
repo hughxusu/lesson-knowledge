@@ -9,7 +9,7 @@ SQL通用语法
    * 单行注释：`--`注释内容或`#`注释内容。
    * 多行注释：`/* 注释内容 */`
 
-## 数据库操作
+## 创建数据库
 
 查询所有数据库
 
@@ -99,7 +99,7 @@ use sqllesson;
 
 配置链接信息
 
-<img src="../../images/mysql/Xnip2025-12-18_13-29-32.jpg" style="zoom:80%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/mysql/Xnip2025-12-18_13-29-32.jpg" style="zoom:80%;" />
 
 选择数据库
 

@@ -12,6 +12,8 @@
     * [认识数据库](docs/05-mysql/a-概述.md)
     * [定义数据库](docs/05-mysql/b-定义.md)
     * [表操作](docs/05-mysql/c-建表.md)
+    * [操作数据表](docs/05-mysql/d-操作.md)
+    * [查询数据表](docs/05-mysql/e-查询.md)
 
 
     

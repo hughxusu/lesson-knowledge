@@ -8,15 +8,15 @@
 
 [Docker软件下载](https://www.docker.com/products/docker-desktop/)
 
-<img src="../../images/docker/Xnip2025-12-16_13-58-11.jpg" style="zoom:85%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/docker/Xnip2025-12-16_13-58-11.jpg" style="zoom:85%;" />
 
 安装成功后启动Docker程序
 
-<img src="../../images/docker/Xnip2025-12-16_14-15-36.jpg" style="zoom:85%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/docker/Xnip2025-12-16_14-15-36.jpg" style="zoom:85%;" />
 
 设置服务器镜像
 
-<img src="../../images/docker/Xnip2025-12-16_14-23-06.jpg" style="zoom:85%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/docker/Xnip2025-12-16_14-23-06.jpg" style="zoom:85%;" />
 
 在引擎设置中添加如下内容
 
