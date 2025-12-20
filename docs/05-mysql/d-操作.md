@@ -44,7 +44,7 @@ values ('七里香', 299, 'https://cdn.music.com/tracks/qilixing.mp3', 5242880);
 
 在DataGrip中查看添加成功的数据
 
-<img src="../../images/mysql/Xnip2025-12-20_17-15-37.jpg" style="zoom:40%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/mysql/Xnip2025-12-20_17-15-37.jpg" style="zoom:40%;" />
 
 #### 2. 给全部字段添加数据
 
@@ -96,7 +96,7 @@ update songs set duration = 310, file_url = 'https://cdn.music.com/tracks/qilixi
 
 更新数据后应该查看更新结果
 
-<img src="../../images/mysql/Xnip2025-12-20_17-58-18.jpg" style="zoom:40%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/mysql/Xnip2025-12-20_17-58-18.jpg" style="zoom:40%;" />
 
 修改全部数据
 
@@ -138,12 +138,12 @@ delete from songs;
 
 创建新的表
 
-<img src="../../images/mysql/Xnip2025-12-20_19-15-07.jpg" style="zoom:40%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/mysql/Xnip2025-12-20_19-15-07.jpg" style="zoom:40%;" />
 
 编辑表和相相关列
 
-<img src="../../images/mysql/Xnip2025-12-20_19-24-43.jpg" style="zoom:40%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/mysql/Xnip2025-12-20_19-24-43.jpg" style="zoom:40%;" />
 
 ### 数据操作
 
-<img src="../../images/mysql/Xnip2025-12-20_20-06-28.jpg" style="zoom:40%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/mysql/Xnip2025-12-20_20-06-28.jpg" style="zoom:40%;" />
