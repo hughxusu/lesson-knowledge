@@ -4,7 +4,7 @@
 
 为了演示查询操作，首先需要导入批量数据，数据文件保存在`\codes\mysql\songs_data_v1.csv`，使用DataGrip导入文件中的数据
 
-<img src="../../images/mysql/Xnip2025-12-21_10-38-30.jpg" style="zoom:40%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/mysql/Xnip2025-12-21_10-38-30.jpg" style="zoom:40%;" />
 
 ## 基本语法
 
