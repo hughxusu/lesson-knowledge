@@ -3,7 +3,7 @@
 本课程以音乐歌曲库为例来介绍数据库表的设计与操作，根据前面的内容首先创建一个歌曲表
 
 ```sql
-create table song (
+create table songs (
     id bigint unsigned not null auto_increment primary key comment '歌曲ID',
     title varchar(255) not null comment '歌曲标题',
     duration int unsigned not null default 0 comment '时长(秒)',
