@@ -14,6 +14,7 @@
     * [表操作](docs/05-mysql/c-建表.md)
     * [操作数据表](docs/05-mysql/d-操作.md)
     * [查询数据表](docs/05-mysql/e-查询.md)
+    * [数据库控制与函数](docs/05-mysql/f-权限.md)
 
 
     
