@@ -299,7 +299,7 @@ select id, title, duration from songs limit 20, 10;
 
 在MySQL中语法的书写顺序和查询语句的执行数据线是不同的，下面是MySQL语句中查询关键字的执行顺序
 
-![](../../images/mysql/e8abec649d8c37cc00f1e2d03c6906c8.png)
+![](https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/mysql/e8abec649d8c37cc00f1e2d03c6906c8.png)
 
 查询时长超过300秒的歌曲
 
