@@ -6,9 +6,9 @@
 create table songs (
     id bigint unsigned not null auto_increment primary key comment '歌曲ID',
     title varchar(255) not null comment '歌曲标题',
-    duration int unsigned not null default 0 comment '时长(秒)',
     file_url varchar(512) not null comment '文件路径',
     audio_format enum('mp3', 'flac', 'wav', 'aac', 'ogg', 'm4a') not null default 'mp3' comment '音频格式',
+    duration int unsigned default 0 comment '时长(秒)',
     file_size bigint unsigned default 0 comment '文件大小(字节)',
     created_at timestamp default current_timestamp comment '入库时间',
     update_at timestamp default current_timestamp on update current_timestamp comment '更新时间'
@@ -134,6 +134,28 @@ delete from songs;
 > 1. `delete`语句的条件可以有，也可以没有，如果没有条件，则会删除整张表的所有数据。
 >
 > 2. `delete`语句不能删除某一个字段的值，可以使用`update`，将该字段值置为`null`。
+
+#### 逻辑删除
+
+> [!alert]
+>
+> 数据都是宝贵的资源，即使数据过时了，也不用从数据库中删除。
+
+逻辑删除（Logical Delete / Soft Delete）并不真正从数据库中物理删除数据，而是通过标记字段来标识数据已被"删除"，使其在业务逻辑中不可见，但数据仍保留在数据库中。
+
+```sql
+alter table songs add is_deleted bit(1) not null default 0 comment '是否删除';
+```
+
+使用逻辑删除标识数据
+
+```sql
+update songs set is_deleted = 1 where id = 2;
+```
+
+> [!warning]
+>
+> 在后面查询时，使用`is_deleted`过滤出有效数据。
 
 ## DataGrip操作表
 

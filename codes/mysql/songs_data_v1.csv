@@ -13,7 +13,7 @@ title,duration,file_url,audio_format,file_size
 浮夸,288,https://cdn.music.com/tracks/fukua.mp3,mp3,5120000
 爱情转移,261,https://cdn.music.com/tracks/aiqingzhuanyi.m4a,m4a,5100000
 K歌之王,232,https://cdn.music.com/tracks/kgezhiwang.mp3,mp3,4500000
-红玫瑰,240,https://cdn.music.com/tracks/hongmeigui.flac,flac,30000000
+红玫瑰,,https://cdn.music.com/tracks/hongmeigui.flac,flac,
 平凡之路,301,https://cdn.music.com/tracks/pingfanzhilu.mp3,mp3,5600000
 那些花儿,305,https://cdn.music.com/tracks/naxiehuaer.mp3,mp3,5400000
 我的歌声里,216,https://cdn.music.com/tracks/wodegeshengli.mp3,mp3,4200000
@@ -27,7 +27,7 @@ K歌之王,232,https://cdn.music.com/tracks/kgezhiwang.mp3,mp3,4500000
 绅士,290,https://cdn.music.com/tracks/shenshi.flac,flac,32000000
 泡沫,258,https://cdn.music.com/tracks/paomo.wav,wav,40000000
 光年之外,235,https://cdn.music.com/tracks/guangnianzhiwai.mp3,mp3,4600000
-来自天堂的魔鬼,245,https://cdn.music.com/tracks/laizitiantangdemogui.m4a,m4a,4800000
+来自天堂的魔鬼,,https://cdn.music.com/tracks/laizitiantangdemogui.m4a,m4a,
 年少有为,279,https://cdn.music.com/tracks/nianshaoyouwei.mp3,mp3,5300000
 李白,273,https://cdn.music.com/tracks/libai.mp3,mp3,5200000
 模特,306,https://cdn.music.com/tracks/mote.flac,flac,34000000
