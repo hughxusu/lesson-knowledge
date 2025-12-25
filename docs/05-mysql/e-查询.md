@@ -118,7 +118,7 @@ select id, title from songs where title like '%天%';
 查询`file_url`文件路径是空的记录有多少
 
 ```sql
-select id, title, file_url from songs where file_url is null;
+select id, title, file_size from songs where file_size is null;
 ```
 
 查询条件中，可以使用逻辑运算符
@@ -151,7 +151,7 @@ select id, title, audio_format from songs where audio_format in ('m4a', 'flac', 
 查询非空数据
 
 ```sql
-select id, title, file_url from songs where file_url is not null;
+select id, title, duration from songs where duration is not null;
 ```
 
 > [!note]
@@ -193,10 +193,10 @@ from     # 表名
 select count(*) from songs;
 ```
 
-统计`audio_format`非空的数据数量
+统计`duration`非空的数据数量
 
 ```sql
-select count(audio_format) from songs;
+select count(duration) from songs;
 ```
 
 统计歌曲平均时长
