@@ -265,13 +265,13 @@ drop table if exists music_users;
 在表创建和修改时，字段操作遵循一定的顺序
 
 ```sql
-id                    # 字段名称
-BIGINT UNSIGNED       # 1. 数据类型
-NOT NULL              # 2. NULL属性
-DEFAULT 1             # 3. 默认值
-AUTO_INCREMENT        # 4. 自增
-PRIMARY KEY           # 5. 键约束
-COMMENT '主键ID'       # 6. 注释
+id                    -- 字段名称
+BIGINT UNSIGNED       -- 1. 数据类型
+NOT NULL              -- 2. NULL属性
+DEFAULT 1             -- 3. 默认值
+AUTO_INCREMENT        -- 4. 自增
+PRIMARY KEY           -- 5. 键约束
+COMMENT '主键ID'       -- 6. 注释
 ```
 
 > [!warning]
@@ -282,9 +282,9 @@ COMMENT '主键ID'       # 6. 注释
 
 ```sql
 username 
-VARCHAR(50)                  # 1. 数据类型
-CHARACTER SET utf8mb4        # 2. 字符集在类型后
-COLLATE utf8mb4_unicode_ci   # 3. 排序规则
+VARCHAR(50)                  -- 1. 数据类型
+CHARACTER SET utf8mb4        -- 2. 字符集在类型后
+COLLATE utf8mb4_unicode_ci   -- 3. 排序规则
 NOT NULL
 DEFAULT ''
 COMMENT '用户名',
