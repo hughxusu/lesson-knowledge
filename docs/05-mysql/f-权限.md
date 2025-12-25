@@ -218,25 +218,45 @@ select datediff(now(), '2000-01-01');
 
 ### 流程函数
 
-1. `if(value, t, f)`如果`value`为`true`，则返回`t`，否则返回`f`。
+1. `if(value, t, f)`如果`value`为`true`，则返回`t`，否则返回`f`。如果文件是不为空，显示`'----'`，否则显示文件异常。
 
-
+```sql
+select id, title, if(file_size, '----', '文件异常') as '文件状态' from songs;
+```
 
 2. `ifnull(value1 , value2)`如果`value1`不为空，返回`value1`，否则返回`value2`。
 
+```sql
+select ifnull('ok', 'Default');
+select ifnull('', 'Default');
+select ifnull(null, 'Default');
+```
+
+3. `case when val1 then res1 ... else default end`如果`val1`为`true`，返回`res1`，…，否则返回`default`默认值。歌曲时间小于240，显示短；240到300之间，显示正常；大于300，显示长。
+
+```sql
+select id, title,
+   (case
+       when duration <= 240 then '短'
+       when duration <= 300 then '正常'
+       else '长' end
+   ) as '长度'
+from songs;
+```
+
+4. `case expr when val1 then res1 ... else default end`如果`expr`的值为`val1`，返回`res1`，…，否则返回`default`默认值。如果文件格式为mp3和wav返回音质一般，否则返回高清。
+
+```sql
+select id, title,
+   (case audio_format
+       when 'mp3' then '一般'
+       when 'wav' then '一般'
+       else '高清' end
+   ) as '音质'
+from songs;
+```
 
 
-各位同学大家好，打扰啦！
 
-我是理学院数学系的徐夙老师。目前我正在筹划明年春季申报的一个大创项目——**“计算机学测系统”**。这是一个非常有实际应用意义的项目，且计划长期深耕，周期将超过一年。
 
-为了把产品做得更贴合用户需求，我想寻找两位志同道合的小伙伴加入团队，主要负责：
 
-- **产品调研**：挖掘用户痛点。
-- **交互与页面设计**：让系统既好用又好看。
-
-如果你对**互联网产品设计**或**网页视觉设计**充满热情，并且有充足的精力投入其中，欢迎联系我！
-
-> **小提醒**： 因为项目涉及跨学科协作，对学习能力有一定要求。有意向的同学麻烦私信我时，顺便附一份**大一下学期的期末成绩单**。
-
-期待有梦想、有执行力的你加入，我们一起从零到一打磨出像样的产品！
