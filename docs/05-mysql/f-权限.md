@@ -33,11 +33,20 @@ create user 'harry'@'localhost' identified by '123456';
 创建后使用DataGrip链接数据库
 
 ```sql
+create user 'harry'@'%' identified by '123456';
 ```
 
+修改用户的密码
 
+```sql
+alter user 'harry'@'%' identified by '12345'
+```
 
+删除用户
 
+```sql
+drop user 'harry'@'localhost';
+```
 
 ### 权限控制
 
