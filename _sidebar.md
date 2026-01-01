@@ -8,7 +8,7 @@
 * Docker
     * [Docker安装与配置](docs/03-docker/a-安装.md)
 
-* MySQL
+* PostgreSQL入门
     * [认识数据库](docs/05-mysql/a-概述.md)
     * [定义数据库](docs/05-mysql/b-定义.md)
     * [表操作](docs/05-mysql/c-建表.md)
