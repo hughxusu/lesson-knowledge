@@ -12,12 +12,9 @@
 
 [主流数据库管理系统的市场占有率排名](https://db-engines.com/en/ranking)
 
-### MySQL数据库
+### PostgreSQL数据库
 
-本教程以[MySQL](https://www.mysql.com/)数据为例，来介绍关系型数据库的使用和操作。MySQL为开源免费的中小型数据库，Sun公司收购了MySQL，而Oracle又收购了Sun公司。官方提供了两种不同的版本
-
-* 社区版（MySQL Community Server）：免费，不提供任何技术支持。
-* 商业版（MySQL Enterprise Edition）：收费，官方提供技术支持。
+本教程以[PostgreSQL](https://www.postgresql.org/)（简称：PgSQL）数据库为例，来介绍关系型数据库的使用和操作。PgSQL是一款功能强大的开源对象关系型数据库，它起源于加州大学伯克利分校的Ingres项目，1986 年开始发展至今，由全球社区维护且完全免费，允许商用和修改。
 
 ### 关系型数据库
 
@@ -29,51 +26,51 @@
 
 ![](https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/mysql/component-of-a-database-table.gif)
 
-## MySQL安装与启动
+## PgSQL安装与启动
 
-MySQL网站提供了不同版本的安装程序，包括：Windows、Linux或MacOS。本教程使用[Docker](/docs/03-docker/a-安装.md)来安装MySQL。在Docker Hub中搜索MySQL镜像
+PgSQL网站提供了不同版本的安装程序，包括：Windows、Linux或MacOS。本教程使用[Docker](/docs/03-docker/a-安装.md)来安装PgSQL。在Docker Hub中搜索PgSQL镜像
 
-<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/mysql/Xnip2025-12-16_14-30-39.jpg" style="zoom:85%;" />
+<img src="../../images/mysql/Xnip2026-01-02_20-23-57.jpg" style="zoom:40%;" />
 
-选择需要的MySQL版本
+选择需要的PgSQL版本
 
-<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/mysql/Xnip2025-12-16_14-42-45.jpg" style="zoom:85%;" />
+<img src="../../images/mysql/Xnip2026-01-02_20-28-14.jpg" style="zoom:40%;" />
 
 查看镜像软件
 
-<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/mysql/Xnip2025-12-16_14-45-53.jpg" style="zoom:85%;" />
+<img src="../../images/mysql/Xnip2026-01-02_20-46-04.jpg" style="zoom:40%;" />
 
-创建MySQL容器
+创建PgSQL容器
 
 ```shell
-docker run --name mysql -e MYSQL_ROOT_PASSWORD=123456 -p 3306:3306 -d mysql:8.4.7
+docker run --name lesson-postgres -e POSTGRES_PASSWORD=123456 -p 5432:5432 -d postgres:18.1
 ```
 
-* `--name mysql`设置容器的名称。
-* `-e MYSQL_ROOT_PASSWORD=123456`设置数据库的密码。
-* `-p 3306:3306`设置端口号。
-* `-d mysql:8.4.7`使用镜像的版本。
+* `--name lesson-postgres`设置容器的名称。
+* `-e POSTGRES_PASSWORD=123456`设置数据库的密码。
+* `-p 5432:5432`设置端口号。
+* `-d postgres:18.1`使用镜像的版本。
 
-查看MySQL容器
+查看PgSQL容器
 
-<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/mysql/Xnip2025-12-16_15-07-20.jpg" style="zoom:85%;" />
+<img src="../../images/mysql/Xnip2026-01-02_20-50-08.jpg" style="zoom:40%;" />
 
 运行镜像终端
 
-<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/mysql/Xnip2025-12-16_15-10-15.jpg" style="zoom:85%;" />
+<img src="../../images/mysql/Xnip2026-01-02_21-22-01.jpg" style="zoom:40%;" />
 
-在镜像终端中启动MySQL命令行
+在镜像终端中启动PgSQL命令行
 
 ```shell
-mysql -u root -p
+psql -U postgres
 ```
 
-* `-u root`MySQL数据库用户名。
-* `-p`MySQL数据库用户名对应的密码。
+* `-u postgres`数据库用户名。
+*  本地服务器以`postgres`操作系统用户，无需密码。
 
-<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/mysql/Xnip2025-12-16_15-19-57.jpg" style="zoom:85%;" />
+<img src="../../images/mysql/Xnip2026-01-02_21-25-04.jpg" style="zoom:40%;" />
 
-使用`exit`可以退出MySQL命令行工具。
+使用`\q`可以退出PgSQL命令行工具。
 
 ## SQL
 

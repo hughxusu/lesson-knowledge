@@ -4,7 +4,7 @@ SQL通用语法
 
 1. SQL语句可以单行或多行书写，以分号结尾。
 2. SQL语句可以使用空格/缩进来增强语句的可读性。
-3. MySQL数据库的SQL语句不区分大小写，通常使用小写。
+3. PgSQL数据库的SQL语句不区分大小写，通常使用小写。
 4. 注释：
    * 单行注释：`--`注释内容或`#`注释内容。
    * 多行注释：`/* 注释内容 */`
@@ -14,17 +14,17 @@ SQL通用语法
 查询所有数据库
 
 ```sql
-show databases;
+\list -- 简写\l
 ```
 
 在终端中输入
 
-<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/mysql/Xnip2025-12-16_20-02-02.jpg" style="zoom:45%;" />
+<img src="../../images/mysql/Xnip2026-01-02_21-42-13.jpg" style="zoom:40%;" />
 
 查询当前数据库
 
 ```sql
-select database();
+select current_database();
 ```
 
 查看版本数据库版本
@@ -45,14 +45,10 @@ create database sqllesson;
 >
 > 在同一个服务器中，不能创建两个名称相同的数据库，否则将会报错。
 
-```sql
-create database sqllesson if not extists sqllesson;
-```
-
 创建数据库并指定字符集
 
 ```sql
-create database lessons default charset utf8mb4;
+create database lessons encoding 'UTF8';
 ```
 
 * `charset utf8mb4`使用utf8字符集。
@@ -62,20 +58,18 @@ create database lessons default charset utf8mb4;
 使用`drop`命令删除数据库
 
 ```sql
-drop database if exists lessons;
+drop database lessons;
 ```
-
-* `if exists`如果数据库存在执行删除，否则不执行删除。
 
 ### 切换数据库
 
 在同一个服务器中可以创建多个数据库，使用`use`命令选中需要使用的数据库
 
 ```sql
-use sqllesson;
+\c sqllesson
 ```
 
-选择后使用`select database();`查看数据库选择状态。
+选择后使用`select current_database();`查看数据库选择状态。
 
 ## 数据库IDE
 
@@ -95,34 +89,32 @@ use sqllesson;
 
 创建新数据库链接
 
-<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/mysql/Xnip2025-12-16_22-05-56.jpg" style="zoom:40%;" />
+<img src="../../images/mysql/Xnip2026-01-03_09-18-42.jpg" style="zoom:40%;" />
 
 配置链接信息
 
-<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/mysql/Xnip2025-12-18_13-29-32.jpg" style="zoom:80%;" />
+<img src="../../images/mysql/Xnip2026-01-03_09-27-20.jpg" style="zoom:40%;" />
 
 选择数据库
 
-<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/mysql/Xnip2025-12-16_22-30-08.jpg" style="zoom:40%;" />
+<img src="../../images/mysql/Xnip2026-01-03_09-32-04.jpg" style="zoom:40%;" />
 
 使用DataGrip创建数据库
 
-<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/mysql/Xnip2025-12-16_22-33-55.jpg" style="zoom:40%;" />
+<img src="../../images/mysql/Xnip2026-01-03_09-38-59.jpg" style="zoom:40%;" />
 
-架构（Schema）：数据库的“蓝图”，定义了表的结构，以及表之间的关系，等价于Database。使用如下命令也可以创建数据库
+架构（Schema）：数据库的“蓝图”，定义了表的结构，以及表之间的关系
 
-```sql
-create schema lessons;
-```
+* Schema隔离了数据库内的命名空间。
+* 可以给不同用户，分配不同Schema的权限。
+* 对于大型项目，实现按业务模块隔离。
+* 不同Schema的表之间，可以建立外键关联。
+
+Database、Schema和数据表之间的关系
+
+<img src="../../images/mysql/database-schema-table.png" style="zoom:50%;" />
 
 SQL命令行
 
-<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/mysql/Xnip2025-12-16_22-41-49.jpg" style="zoom:40%;" />
-
-选中数据库
-
-```sql
-use sqllesson;
-select database();
-```
+<img src="../../images/mysql/Xnip2026-01-03_10-05-52.jpg" style="zoom:40%;" />
 
