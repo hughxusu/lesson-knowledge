@@ -18,6 +18,44 @@ create table songs (
 * `CURRENT_TIMESTAMP`设置时间为写入记录的当前时间。
 * `ON UPDATE`当记录更新时触发的操作。
 
+
+
+
+
+### 字段操作顺序
+
+在表创建和修改时，字段操作遵循一定的顺序
+
+```sql
+id                    -- 字段名称
+BIGINT UNSIGNED       -- 1. 数据类型
+NOT NULL              -- 2. NULL属性
+DEFAULT 1             -- 3. 默认值
+AUTO_INCREMENT        -- 4. 自增
+PRIMARY KEY           -- 5. 键约束
+COMMENT '主键ID'       -- 6. 注释
+```
+
+> [!warning]
+>
+> 部分属性顺序调整语句仍然可以执行，但上面的顺序表操作的推荐顺序，表的修改和创建都成立。
+
+字符串操作增加了字符集操作
+
+```sql
+username 
+VARCHAR(50)                  -- 1. 数据类型
+CHARACTER SET utf8mb4        -- 2. 字符集在类型后
+COLLATE utf8mb4_unicode_ci   -- 3. 排序规则
+NOT NULL
+DEFAULT ''
+COMMENT '用户名',
+```
+
+
+
+
+
 ## 数据操作
 
 DML主要包括数据的增、删、改操作，对应的动词关键字是`INSERT`、`UPDATE`、`DELETE`。
