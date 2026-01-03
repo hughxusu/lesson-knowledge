@@ -30,15 +30,15 @@
 
 PgSQL网站提供了不同版本的安装程序，包括：Windows、Linux或MacOS。本教程使用[Docker](/docs/03-docker/a-安装.md)来安装PgSQL。在Docker Hub中搜索PgSQL镜像
 
-<img src="../../images/mysql/Xnip2026-01-02_20-23-57.jpg" style="zoom:40%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/mysql/Xnip2026-01-02_20-23-57.jpg" style="zoom:40%;" />
 
 选择需要的PgSQL版本
 
-<img src="../../images/mysql/Xnip2026-01-02_20-28-14.jpg" style="zoom:40%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/mysql/Xnip2026-01-02_20-28-14.jpg" style="zoom:40%;" />
 
 查看镜像软件
 
-<img src="../../images/mysql/Xnip2026-01-02_20-46-04.jpg" style="zoom:40%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/mysql/Xnip2026-01-02_20-46-04.jpg" style="zoom:40%;" />
 
 创建PgSQL容器
 
@@ -53,11 +53,11 @@ docker run --name lesson-postgres -e POSTGRES_PASSWORD=123456 -p 5432:5432 -d po
 
 查看PgSQL容器
 
-<img src="../../images/mysql/Xnip2026-01-02_20-50-08.jpg" style="zoom:40%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/mysql/Xnip2026-01-02_20-50-08.jpg" style="zoom:40%;" />
 
 运行镜像终端
 
-<img src="../../images/mysql/Xnip2026-01-02_21-22-01.jpg" style="zoom:40%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/mysql/Xnip2026-01-02_21-22-01.jpg" style="zoom:40%;" />
 
 在镜像终端中启动PgSQL命令行
 
@@ -68,7 +68,7 @@ psql -U postgres
 * `-u postgres`数据库用户名。
 *  本地服务器以`postgres`操作系统用户，无需密码。
 
-<img src="../../images/mysql/Xnip2026-01-02_21-25-04.jpg" style="zoom:40%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/mysql/Xnip2026-01-02_21-25-04.jpg" style="zoom:40%;" />
 
 使用`\q`可以退出PgSQL命令行工具。
 

@@ -20,7 +20,7 @@ select * from mysql.user;
 
 权限查询结果
 
-<img src="../../images/mysql/Xnip2025-12-23_19-25-01.jpg" style="zoom:45%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/mysql/Xnip2025-12-23_19-25-01.jpg" style="zoom:45%;" />
 
 * Host字段表示当前用户访问的主机
   * `localhost`代表只能够在当前本机访问，不可以远程访问的。

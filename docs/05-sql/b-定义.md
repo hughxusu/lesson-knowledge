@@ -19,7 +19,7 @@ SQL通用语法
 
 在终端中输入
 
-<img src="../../images/mysql/Xnip2026-01-02_21-42-13.jpg" style="zoom:40%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/mysql/Xnip2026-01-02_21-42-13.jpg" style="zoom:40%;" />
 
 查询当前数据库
 
@@ -89,19 +89,19 @@ drop database lessons;
 
 创建新数据库链接
 
-<img src="../../images/mysql/Xnip2026-01-03_09-18-42.jpg" style="zoom:40%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/mysql/Xnip2026-01-03_09-18-42.jpg" style="zoom:40%;" />
 
 配置链接信息
 
-<img src="../../images/mysql/Xnip2026-01-03_09-27-20.jpg" style="zoom:40%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/mysql/Xnip2026-01-03_09-27-20.jpg" style="zoom:40%;" />
 
 选择数据库
 
-<img src="../../images/mysql/Xnip2026-01-03_09-32-04.jpg" style="zoom:40%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/mysql/Xnip2026-01-03_09-32-04.jpg" style="zoom:40%;" />
 
 使用DataGrip创建数据库
 
-<img src="../../images/mysql/Xnip2026-01-03_09-38-59.jpg" style="zoom:40%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/mysql/Xnip2026-01-03_09-38-59.jpg" style="zoom:40%;" />
 
 架构（Schema）：数据库的“蓝图”，定义了表的结构，以及表之间的关系
 
@@ -112,9 +112,9 @@ drop database lessons;
 
 Database、Schema和数据表之间的关系
 
-<img src="../../images/mysql/database-schema-table.png" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/mysql/database-schema-table.png" style="zoom:50%;" />
 
 SQL命令行
 
-<img src="../../images/mysql/Xnip2026-01-03_10-05-52.jpg" style="zoom:40%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/mysql/Xnip2026-01-03_10-05-52.jpg" style="zoom:40%;" />
 
