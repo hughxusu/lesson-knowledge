@@ -24,72 +24,60 @@
 
 ## Homebrew安装及常用命令
 
+Homebrew 是 macOS 上最流行的包管理器，可以方便地安装和管理各种命令行工具。
+
 ### 安装
 
-[brew安装介绍](https://brew.sh/index_zh-cn)
+[brew安装](https://brew.sh/zh-cn/)，brew程序包含三部分：
 
-```shell
-# 打开，保存为brew_install
-https://raw.githubusercontent.com/Homebrew/install/master/install.sh
+* Brew包管理系统的核心程序（命令行工具）。
+* Homebrew-core官方核心软件仓库，指定了软件下载的路径和依赖。
+* Bottles提前编译好的二进制软件包。
 
-# 替换
-BREW_REPO="https://github.com/Homebrew/brew"
-# 为
-BREW_REPO="https://mirrors.ustc.edu.cn/brew.git"
+使用brew安装软件后，软件的安装路径（apple芯片）
 
-# 执行
-/bin/bash brew_install
-
-# 进入clone状态后停止，进入文件夹
-cd /usr/local/Homebrew/Library/Taps/homebrew
-git clone https://mirrors.tuna.tsinghua.edu.cn/git/homebrew/homebrew-core.git # 重新clone
-```
+* brew程序自身命令集：`/opt/homebrew`。
+* brew下载安装的程序：`/opt/homebrew/Cellar`
 
 ### 镜像替换
 
-homebrew主要分两部分：git repo（位于GitHub）和二进制bottles（位于bintray）。
-
-#### 默认源替换
-
-替换homebrew默认源
+brew默认从国外服务器下载软件，查看brew的镜像源
 
 ```shell
-# 替换brew.git:
-cd "$(brew --repo)"
-git remote set-url origin https://mirrors.ustc.edu.cn/brew.git
-
-# 替换homebrew-core.git:
-cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core"
-git remote set-url origin https://mirrors.ustc.edu.cn/homebrew-core.git
+cd "$(brew --repo)" && git remote -v
 ```
 
-替换Homebrew Bottles默认源
+将brew镜像源替换为中科大镜像源可以加快软件下载
+
+1. 替换brew仓库源
 
 ```shell
+git -C "$(brew --repo)" remote set-url origin https://mirrors.ustc.edu.cn/brew.git
+```
+
+2. homebrew 4.0后homebrew-core仓库源不需要单独配置。
+
+3. 替换bottles镜像
+
+```shell
+echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles' >> ~/.zshrc
+
+source ~/.zshrc
+
 # bash用户
 echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles' >> ~/.bash_profile
-source ~/.bash_profile
 
-# zsh用户
-echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles' >> ~/.zshrc
-source ~/.zshrc
+source ~/.bash_profile
 ```
 
-#### 重置默认源
-
-重置homebrew默认源
+4. 重置homebrew默认源
 
 ```shell
-# 重置brew.git:
-cd "$(brew --repo)"
-git remote set-url origin https://github.com/Homebrew/brew.git
+# 恢复 brew 仓库为官方源
+git -C "$(brew --repo)" remote set-url origin https://github.com/Homebrew/brew.git
 
-# 重置homebrew-core.git:
-cd "$(brew --repo)/Library/Taps/homebrew/homebrew-core"
-git remote set-url origin https://github.com/Homebrew/homebrew-core.git
+# 恢复bottles移除.zshrc或.bash_profile中的命令
 ```
-
-重置Homebrew Bottles默认源，==注释bash或zsh中的命令==
 
 ### 常用命令
 
@@ -100,7 +88,7 @@ brew install git
 # 卸载软件
 brew uninstall git
 
-# 查询软件，/gi*/是个正在表达式。
+# 查询软件，/gi*/是正则表达式。
 brew search /gi*/
 
 # 简洁命令帮助
@@ -109,23 +97,17 @@ brew —help
 # 完整命令帮助       
 man brew
 
-# 安装软件包(这里是示例安装的Git版本控制)           
-brew install git
-
-# 卸载软件包
-brew uninstall git
-
-# 搜索软件包
-brew search git
-
 # 显示已经安装的所有软件包
 brew list
 
-# 同步远程最新更新情况，对本机已经安装并有更新的软件用*标明    
+# 更新brew软件   
 brew update
 
 # 查看已安装的哪些软件包需要更新
 brew outdated
+
+# 更新全部安装包
+brew upgrade
 
 # 更新单个软件包
 brew upgrade git
@@ -141,19 +123,6 @@ brew cleanup
 
 # 清理单个已安装软件包的历史版本
 brew cleanup git   
-```
-
-### 常用路径和文件夹
-
-```shell
-/usr/local/Cellar      # 所有brew安装的程序，都将以[程序名/版本号]存放于本目录下
-/usr/local/Homebrew    # brew程序自身命令集
-
-# 部分程序的软连接
-/usr/bin
-/usr/sbin
-
-/usr/local/include # 部分程序的头文件
 ```
 
 ## mac git升级
