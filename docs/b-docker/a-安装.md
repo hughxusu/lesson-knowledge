@@ -4,7 +4,7 @@
 
 ## Docker的安装
 
-### 桌面版的安装
+### Mac安装
 
 [Docker软件下载](https://www.docker.com/products/docker-desktop/)
 
@@ -57,3 +57,5 @@ docker info
 ```
 
 表示镜像配置成功。
+
+## Ubuntu的安装
