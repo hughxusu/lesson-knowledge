@@ -34,6 +34,12 @@ Homebrew 是 macOS 上最流行的包管理器，可以方便地安装和管理�
 * Homebrew-core官方核心软件仓库，指定了软件下载的路径和依赖。
 * Bottles提前编译好的二进制软件包。
 
+brew安装成功后，查看brew版本
+
+```shell
+brew --version
+```
+
 使用brew安装软件后，软件的安装路径（apple芯片）
 
 * brew程序自身命令集：`/opt/homebrew`。
