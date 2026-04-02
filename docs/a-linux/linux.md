@@ -1,41 +1,43 @@
 # 操作系统
 
-常见的操作系统：
+操作系统（Operating System, OS）是管理计算机硬件与软件资源的“管家”，也是用户与计算机硬件之间的“桥梁”。
 
-1. Windows
-2. mac OS
-3. Linux
-4. iOS
-5. Android
+<img src="../../images/linux/MBXY-CR-c26c02d21432253a9e4b2133dd4580cc.png" style="zoom:65%;" />
 
-操作系统直接运行在计算机上的系统软件， 它是控制硬件和支持软件运行的计算机程序。
+操作系统的核心功能：
 
-<img src="https://pic3.zhimg.com/80/v2-1f1456e0c08b37130e21eb8e18e80dba_1440w.webp" style="zoom:67%;" />
+* 进程管理（处理器管理）：决定哪个程序在什么时候使用 CPU。
+* 内存管理：负责分配和回收内存空间。
+* 文件系统管理：负责数据的存储与组织。
+* 设备管理：协调键盘、鼠标、显示器、声卡等外部设备。
 
-> [!note]
->
-> 操作系统的作用：向下控制硬件向上支持软件的运行，具有承上启下的作用。
->
-> 操作系统是一个控制硬件和支持软件运行的计算机程序，只有安装了操作系统计算机才能进行正常工作。
+操作系统的分类
 
-## 虚拟机
+1. 个人电脑
 
-虚拟机是一个能够虚拟出来计算机的一个软件。
+   * Windows（最普及的操作系统）
 
-常用的虚拟机软件
+   * 苹果电脑macOS（适合于开发人员）
+   * Linux（应用软件少）
 
-1. [Vmware](https://www.vmware.com/cn/products/workstation-player.html)
-2. [VirtualBox](https://www.virtualbox.org/)
+2. 服务器操作系统
 
-就是模拟一个真实的计算机，好比一个虚拟的电脑，对于快速学习一个新的操作系统就可以通过虚拟机来完成。
+   * Linux主流操作系统，安全、稳定、免费
+   * Windows Server
 
-<img src="https://s1.ax1x.com/2023/04/22/p9ZMPBj.png" style="zoom:67%;" />
+<img src="../../images/linux/7000.png" style="zoom:80%;" />
+
+3. 嵌入式操作系统
+   * Linux
+4. 移动设备操作系统
+   * iOS
+   * Android（基于Linux）
+
+
 
 ## Ubuntu操作系统
 
 Ubuntu操作系统是属于Linux操作系统中的一种，它是免费、稳定且有可视化界面，是 Linux 初学者常用的操作系统。 
-
-<img src="https://res.cloudinary.com/canonical/image/fetch/f_auto,q_auto,fl_sanitize,w_5114,h_2642/https://assets.ubuntu.com/v1/acdf946a-Screenshot+from+2022-04-18+13-05-17.png" style="zoom:67%;" />
 
 ## Linux内核及发行版
 
@@ -49,7 +51,7 @@ Linux 发行版是Linux内核与各种常用软件的组合产品，即为常说
 
 ## Linux 系统目录结构
 
-![](https://www.runoob.com/wp-content/uploads/2014/06/d0c50-linux2bfile2bsystem2bhierarchy.jpg)
+![](../../images/linux/d0c50-linux2bfile2bsystem2bhierarchy.jpg)
 
 主要目录说明：
 
