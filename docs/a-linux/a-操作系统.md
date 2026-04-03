@@ -2,7 +2,7 @@
 
 操作系统（Operating System, OS）是管理计算机硬件与软件资源的“管家”，也是用户与计算机硬件之间的“桥梁”。
 
-<img src="../../images/linux/MBXY-CR-c26c02d21432253a9e4b2133dd4580cc.png" style="zoom:65%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/MBXY-CR-c26c02d21432253a9e4b2133dd4580cc.png" style="zoom:65%;" />
 
 操作系统的核心功能：
 
@@ -23,7 +23,7 @@
    * Linux主流操作系统，安全、稳定、免费
    * Windows Server
 
-<img src="../../images/linux/7000.jpeg" style="zoom:80%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/7000.jpeg" style="zoom:80%;" />
 
 3. 嵌入式操作系统
    * Linux
@@ -36,7 +36,7 @@
 
 1. 在 20 世纪 60 年代中期，贝尔实验室（Bell Labs）、麻省理工学院（MIT）和通用电气（GE）联合开发一个名为 **Multics** 的宏大项目，意图构建一个支持多用户的庞大操作系统。
 
-<img src="../../images/linux/001_大型机.png" style="zoom:60%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/001_大型机.png" style="zoom:60%;" />
 
 2. 1969 年，由于项目过于复杂且进展缓慢，贝尔实验室撤出了该项目。
 3. 1969年从这个项目中退出的肯-汤普逊（Ken Thompson），为了让一台空闲的电脑上能够运行"星际旅行" 游行，用了 1 个月的时间，使用汇编写出了Unix操作系统的原型。
@@ -45,14 +45,14 @@
 6. 1972 年，丹尼斯-里奇在B语言的基础上最终设计出了一种新的语言，取名为C语言。
 7. 1973年初，C语言的主体完成，肯-汤普逊和丹尼斯-里奇用它完全重写了Unix操作系统。
 
-![002_unix之父](../../images/linux/002_unix之父.png)
+![002_unix之父](https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/002_unix之父.png)
 
 8. 此后由于AT&T受反垄断法限制，不能从事计算机业务，以极低的价格（甚至免费）将Unix源码授权给大学使用，Unix在大学中迅速扩散。
 9. 80年代初，随着Unix商业价值的凸显，AT&T开始收回Unix的版权，禁止在教学中使用源码。
 10. 进入90年代，面对商业Unix的封闭和昂贵，社区开始寻求替代方案，但是进展缓慢。
 11. 乔布斯带领苹果公司基于BSD发展出，macOS和iOS的核心。
 
-![003_unix家谱](../../images/linux/003_unix家谱.jpg)
+![003_unix家谱](https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/003_unix家谱.jpg)
 
 ### Minix
 
@@ -106,7 +106,7 @@ Linux经过长期的发展在多个应用领域的表现卓越：
 
 Window与Linux的文件目录结构对比
 
-![](../../images/linux/1559049-20190113231354601-751552125.png)
+![](https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/1559049-20190113231354601-751552125.png)
 
 * 单用户操作系统：一台计算机在同一时间只能由一个用户使用，一个用户独自享用系统的全部硬件和软件资源：
   * Windows系统最初的设计均基于这个理念。
