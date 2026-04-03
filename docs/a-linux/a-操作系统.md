@@ -29,7 +29,7 @@
 
 3. 嵌入式操作系统
    * Linux
-4. 移动设备操作系统
+   
    * iOS
    * Android（基于Linux）
 
