@@ -2,44 +2,6 @@
 
 ## 网络基础
 
-## Linux基础
-
-#### linux启动过程
-
-```mermaid
-graph TB;
-a(BOIS自检)-->b(启动GRUB/LILO);
-b-->c(运行linux内核并检测硬件);
-c-->d(运行系统第一个进程init);
-d-->e(init 读取系统引导文件配置/etc/inittab中的信息进行初始化);
-e-->f(/etc/rc.d/rc.sysinit系统初始化脚本)
-f-->g(/etc/rc.d/rcX.d/KS* 根据运行基本X配置服务)
-g-->h(/etc/rc.d/rc.local执行本地特殊配置)
-h-->i(其他特殊服务)
-```
-
-* GRUB引导界面
-
-### linux目录结构
-
-```shell
-/
-├── bin # 常用命令
-├── boot # 引导文件
-├── etc # 配置相关文件
-├── home # 普通用户相关文件
-├── mnt # 挂在点，默认挂载光驱
-├── root # root用户相关文件
-├── sbin # 有一定权限才可以使用的命令
-├── var # 经常变换的数据
-├── usr # 文件默认安装文件夹
-├── tmp # 系统临时文件
-└── ...
-```
-
-* 当前目录 pwd
-* 工作目录 运行程序保存的目录
-
 ### 用户管理
 
 #### 添加新用户
