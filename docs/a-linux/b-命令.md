@@ -59,7 +59,7 @@ Linux中的目录就是桌面系统中的文件夹，使用`ls`可以查看目�
 ls -a -l -h
 ```
 
-<img src="../../images/linux/Xnip2026-04-04_10-03-11.jpg" style="zoom:60%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/Xnip2026-04-04_10-03-11.jpg" style="zoom:60%;" />
 
 执行命令时选项可以写在一起，且没有顺序要求
 
@@ -133,7 +133,7 @@ ls [h-p]*.txt
 
 * `cd`或`cd~`切换到当前用户的主目录。
 
-<img src="../../images/linux/Xnip2026-04-04_10-56-46.jpg" style="zoom:60%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/Xnip2026-04-04_10-56-46.jpg" style="zoom:60%;" />
 
 * `cd .`保持在当前目录不变。
 * `cd ..`切换到上级目录。
