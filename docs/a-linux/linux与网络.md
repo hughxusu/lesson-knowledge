@@ -371,18 +371,6 @@ k + 回车 输入进程号 # 终止指定进程
 top -d 10 # 指定系统更新进程的时间为10秒
 ```
 
-### ssh
-
-ssh（secure shell）远程操作linux、进行文件上传和下载的软件。
-
-```mermaid
-	graph BT;
-b(windows ssh客户端)-->a(linux 启动sshd服务)
-c(linux ssh客户端)-->a
-```
-
-`sshd`服务默写启动，端口22号
-
 ### Vim
 
 * 从命令模式进入编辑模式：`i`插入 / `a`追加
