@@ -71,42 +71,6 @@ chgrp policeman Frameworks/ # 修改文件夹Frameworks的所有组为policeman
 ln -s /home/xioaming/a.out toA
 ```
 
-* 拷贝  
-
-```shell
-# 源 目标
-cp a.out /home/xiaoming # 拷贝到/home/xiaoming目录下
-```
-
-* 移动
-
-```shell
-# 源 目标
-mv a.out ../
-
-# 给文件改名
-mv a.txt b.txt
-```
-
-* 分页
-
-```shell
-more install.log # 分页显示 空格下一页
-ls -l /etc/ | more # 管道加分页
-```
-
-* grep 在文件中查找关键词
-
-```shell
-grep "hello" aa.java # 在java文件中查找hello字符串
-
-# 显示在第几行
-grep -n "hello" aa.java
-
-# 支持在多个文件中查找，用空格隔开
-grep "hello" a.txt ../b.txt
-```
-
 * find 查找文件
 
 ```shell
@@ -143,13 +107,6 @@ history 10 # 最近10个命令
 date # 显示系统时间
 ```
 
-* 管道命令
-
-```shell
-# 第一个命令结果上继续执行
-ls -a | grep "python"
-```
-
 * `export`命令
 
 ```shell
@@ -160,16 +117,6 @@ export PATH=$PATH:/root # 临时加入环境变量
 
 ```shell
 echo $PATH
-```
-
-* 通配符
-
-```shell
-# * 代表多个字母和数字
-# ？代表一个字母和数字
-# [] 在一个范围内查找
-
-ls m* # m开始的文件或文件夹
 ```
 
 * `whoami`打印当前用户
@@ -218,12 +165,6 @@ file a.out
 
 ```shell
 which git
-```
-
-* `tree`命令
-
-```shell
-tree -L 1 # 列出一级目录
 ```
 
 * 使用断开查询

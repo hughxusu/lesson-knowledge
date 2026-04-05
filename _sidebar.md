@@ -1,6 +1,7 @@
 * Linux使用
     * [操作系统](docs/a-linux/a-操作系统.md)
     * [Linux终端使用](docs/a-linux/b-命令.md)
+    * [管理服务器](docs/a-linux/c-服务器.md)
 
 * Mac使用
     * [Mac安装与配置](docs/b-mac/mac配置.md)
