@@ -29,35 +29,35 @@ c(ssh客户端)--互联网-->aa(linux服务器)
 
 在阿里云上创建一个VPC网络，相当于租用一块完全私有、逻辑隔离的虚拟网络空间，VPC网络并不收费。如果云服务（ECS服务器、数据库服务、对象存储OSS等），在同一个VPC网，且处于同一个地域中，可以通过阿里云的内网进行数据传输，不产生公网流量费用。
 
-<img src="../../images/linux/Xnip2026-04-05_10-27-50.jpg" style="zoom:45%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/Xnip2026-04-05_10-27-50.jpg" style="zoom:45%;" />
 
 创建专有VPC网络的配置
 
-<img src="../../images/linux/Xnip2026-04-05_10-24-10.jpg" style="zoom:45%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/Xnip2026-04-05_10-24-10.jpg" style="zoom:45%;" />
 
 ### 创建ECS服务器
 
 选择ECS服务器
 
-<img src="../../images/linux/Xnip2026-04-05_10-42-34.jpg" style="zoom:45%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/Xnip2026-04-05_10-42-34.jpg" style="zoom:45%;" />
 
 选择购买的实力
 
-<img src="../../images/linux/Xnip2026-04-05_10-46-06.jpg" style="zoom:45%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/Xnip2026-04-05_10-46-06.jpg" style="zoom:45%;" />
 
 配置ECS实例
 
-<img src="../../images/linux/Xnip2026-04-05_10-59-30.jpg" style="zoom:45%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/Xnip2026-04-05_10-59-30.jpg" style="zoom:45%;" />
 
 ### 服务器配置
 
 选择ECS服务器
 
-<img src="../../images/linux/Xnip2026-04-05_12-01-04.jpg" style="zoom:45%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/Xnip2026-04-05_12-01-04.jpg" style="zoom:45%;" />
 
 服务器实例选择
 
-<img src="../../images/linux/Xnip2026-04-05_15-56-07.jpg" style="zoom:45%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/Xnip2026-04-05_15-56-07.jpg" style="zoom:45%;" />
 
 ## 连接服务器
 
@@ -76,7 +76,7 @@ c(ssh客户端)--互联网-->aa(linux服务器)
 ifconfig | grep inet
 ```
 
-<img src="../../images/linux/Xnip2026-04-05_16-27-01.jpg" style="zoom:45%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/Xnip2026-04-05_16-27-01.jpg" style="zoom:45%;" />
 
 > [!warning]
 >
@@ -96,7 +96,7 @@ ping 127.0.0.1
 ping www.baidu.com
 ```
 
-<img src="../../images/linux/Xnip2026-04-05_20-47-31.jpg" style="zoom:45%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/Xnip2026-04-05_20-47-31.jpg" style="zoom:45%;" />
 
 ### 域名和端口号
 
@@ -119,25 +119,25 @@ SSH客户端是一种使用Secure Shell（SSH）协议连接到远程计算机�
 * 可以对所有传输的数据进行加密。
 * 传输的数据是经过压缩的。
 
-<img src="../../images/linux/Securing_applications_with_ssh_tunneling___port_forwarding-2.png" style="zoom:45%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/Securing_applications_with_ssh_tunneling___port_forwarding-2.png" style="zoom:45%;" />
 
 Mac电脑上最方面的SSH客户端为[Termius](https://termius.com/)，Termius免费版既可以日常使用，且支持Windows版。
 
-<img src="../../images/linux/Xnip2026-04-05_21-25-14.jpg" style="zoom:60%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/Xnip2026-04-05_21-25-14.jpg" style="zoom:60%;" />
 
 创建SSH客户端
 
-<img src="../../images/linux/Xnip2026-04-05_21-36-08.jpg" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/Xnip2026-04-05_21-36-08.jpg" style="zoom:50%;" />
 
 连接上传文件服务器
 
-<img src="../../images/linux/Xnip2026-04-05_21-45-41.jpg" style="zoom:55%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/Xnip2026-04-05_21-45-41.jpg" style="zoom:55%;" />
 
 选择已经创建SSH客户端
 
-<img src="../../images/linux/Xnip2026-04-05_21-52-28.jpg" style="zoom:60%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/Xnip2026-04-05_21-52-28.jpg" style="zoom:60%;" />
 
 上传文件到服务器
 
-<img src="../../images/linux/Xnip2026-04-05_21-54-02.jpg" style="zoom:50%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/Xnip2026-04-05_21-54-02.jpg" style="zoom:50%;" />
 
