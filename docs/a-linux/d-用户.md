@@ -18,13 +18,13 @@
 
 用户和用户组的关系
 
-<img src="../../images/linux/2144544-20201012203745705-413629468.png" style="zoom:65%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/2144544-20201012203745705-413629468.png" style="zoom:65%;" />
 
 ## 权限管理
 
 使用`ls -l`可以查看文件夹下文件的详细信息
 
-<img src="../../images/linux/Xnip2026-04-06_11-57-01.jpg" style="zoom:65%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/Xnip2026-04-06_11-57-01.jpg" style="zoom:65%;" />
 
 * 权限：操作文件或文件夹的权限，包括：读、写和执行。
 * 硬链接数：有多少种方式，可以访问到当前目录。
@@ -37,7 +37,7 @@
 
 权限信息表示
 
-<img src="../../images/linux/002_权限示意图.png" style="zoom:80%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/002_权限示意图.png" style="zoom:80%;" />
 
 ### 修改文件权限
 
@@ -101,7 +101,7 @@ sudo groupadd dev
 cat /etc/group
 ```
 
-<img src="../../images/linux/Xnip2026-04-06_20-13-32.jpg" style="zoom:55%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/Xnip2026-04-06_20-13-32.jpg" style="zoom:55%;" />
 
 > [!warning]
 >
