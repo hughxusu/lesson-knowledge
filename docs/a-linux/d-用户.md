@@ -114,5 +114,113 @@ cat /etc/group
 sudo chgrp -R dev codes/
 ```
 
+`groupdel`命令可以删除组
+
+```shell
+#    命令      组
+sudo groupdel dev
+```
+
+用户创建的默认组，并没有执行系统管理相关命令的权限，需要在`/etc/sudoers`中配置相关权限。
+
+```shell
+sudo cat /etc/sudoers
+```
+
+<img src="../../images/linux/Xnip2026-04-07_19-49-07.jpg" style="zoom:55%;" />
+
+* 系统默认存在的`admin`组和`sudo`组与`root`用户一样有所有权限。
+
+> [!warning]
+>
+> 没有在这个文件里配置的用户和用户组，没有系统管理相关命令的权限。
+
 ## 用户管理
+
+### 用户基本操作
+
+创建用户
+
+1. `useradd`命令用于添加用户
+
+```shell
+sudo useradd -m -g dev dev-one
+```
+
+* `-m`自动建立用户家目录。
+* `-g`指定用户所在组，`-g dev`用户组为`dev`。
+* `dev-one`新建的用户名。
+
+2. `passwd`命令用于设置用户的密码
+
+```shell
+#    命令    用户名
+sudo passwd dev-one
+```
+
+查看用户信息，`/etc/passwd`保存了所以用户信息
+
+```shell
+cat /etc/passwd
+```
+
+<img src="../../images/linux/Xnip2026-04-07_21-05-52.jpg" style="zoom:60%;" />
+
+`userdel`命令用于删除用户
+
+```shell
+sudo userdel -r dev-one
+```
+
+* `-r`自动删除用户家目录
+
+> [!warning]
+>
+> 创建用户时，如果忘记添加`-m`选项，指定新用户的家目录，最好的方法就是删除用户，重新创建。
+
+切换用户
+
+1. `su`命令可以在同一终端内，切换不同的用户。
+
+```shell
+su - root
+```
+
+* `-`切换到`root`家目录，否则保持位置不变。
+
+2. `exit`退出当前的切换用户。
+
+<img src="../../images/linux/003_su和exit示意图.png" style="zoom:90%;" />
+
+### 查看用信息
+
+1. 查看用户ID和组ID
+
+```shell
+id dev-one
+```
+
+<img src="../../images/linux/Xnip2026-04-07_22-03-50.jpg" style="zoom:65%;" />
+
+2. `who`查看当前所有登录的用户终端。
+3. `whoami`查看当前登录用户的账户名。
+
+### 修改用户权限
+
+使用`usermod`可以修改用户组和Shell程序
+
+1. `-g`修改用的主组
+
+```shell
+```
+
+2. `-G`修改用户的附加组
+
+```shell
+```
+
+3. `-s`修改用户的Shell程序
+
+```shell
+```
 
