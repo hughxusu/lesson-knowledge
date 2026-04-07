@@ -127,7 +127,7 @@ sudo groupdel dev
 sudo cat /etc/sudoers
 ```
 
-<img src="../../images/linux/Xnip2026-04-07_19-49-07.jpg" style="zoom:55%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/Xnip2026-04-07_19-49-07.jpg" style="zoom:55%;" />
 
 * 系统默认存在的`admin`组和`sudo`组与`root`用户一样有所有权限。
 
@@ -164,7 +164,7 @@ sudo passwd dev-one
 cat /etc/passwd
 ```
 
-<img src="../../images/linux/Xnip2026-04-07_21-05-52.jpg" style="zoom:60%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/Xnip2026-04-07_21-05-52.jpg" style="zoom:60%;" />
 
 `userdel`命令用于删除用户
 
@@ -190,7 +190,7 @@ su - root
 
 2. `exit`退出当前的切换用户。
 
-<img src="../../images/linux/003_su和exit示意图.png" style="zoom:90%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/003_su和exit示意图.png" style="zoom:90%;" />
 
 ### 查看用信息
 
@@ -200,7 +200,7 @@ su - root
 id dev-one
 ```
 
-<img src="../../images/linux/Xnip2026-04-07_22-03-50.jpg" style="zoom:65%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/Xnip2026-04-07_22-03-50.jpg" style="zoom:65%;" />
 
 2. `who`查看当前所有登录的用户终端。
 3. `whoami`查看当前登录用户的账户名。
