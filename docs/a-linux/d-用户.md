@@ -74,6 +74,21 @@ chmod -x codes
 chmod -rw codes
 ```
 
+修改权限的数字形式
+
+```shell
+chmod -R 777 codes/
+```
+
+* `-R`递归子目录或文件。
+* `777`第一个7表示拥有者权限，第二个7表示组权限，第三个7表示其他用户权限。
+
+![](../../images/linux/004_文件权限示意图.png)
+
+> [!warning]
+>
+> 使用数组表示可以同时修改拥有者、组和其他用户三者权限。
+
 ### 超级用户
 
 Linux中的超级管理员用户称为root用，root用户对于操作系统的所有资源具有所有操作权限。除root用户外的其它用户，称为标准用户。标准用户执行系统管理相关命令，如：添加用户、安装软件需要借助`sudo`命令。
@@ -209,18 +224,70 @@ id dev-one
 
 使用`usermod`可以修改用户组和Shell程序
 
-1. `-g`修改用的主组
+1. `-G`修改用户的附加组
 
 ```shell
+#               组名称               
+sudo usermod -G sudo dev-one
 ```
 
-2. `-G`修改用户的附加组
+2. `-g`修改用的主组
 
 ```shell
+#               组名称             
+sudo usermod -g sudo dev-one
 ```
 
 3. `-s`修改用户的Shell程序
 
 ```shell
+#               修改bash
+sudo usermod -s /bin/bash dev-one
 ```
 
+### 查看程序位置
+
+`which`命令可以查看可执行程序的位置，Linux操作系统中的部分命令就是可执行程序。
+
+```shell
+which passwd
+```
+
+* 这里的`passwd`是一个可执行程序，保存在`/usr/bin/passwd`路径下。
+* `/etc/passwd`中的`passwd`是一个文本文件，用于保存用户信息。
+
+Linux的命令分为外部命令和内部命令两类：
+
+1. 外部命令，对应着磁盘上的一个可执行文件，如：`ls`、`cat`等。
+2. 内部命令，没有独立的可执行文件，它们是Shell程序自带的功能，如：`cd`、`pwd`等。
+
+```shell
+which cd
+```
+
+程序存储路径
+
+```shell
+.
+├── bin -> usr/bin        # 软连接指向bin
+├── sbin -> usr/sbin      # 软连接指向sbin
+└── usr
+     ├── bin              # 二进制执行文件目录
+     └── sbin             # 二进制代码存放目录
+```
+
+### 修改文件权限
+
+`chown`修改文件和目录的拥有者
+
+```shell
+#    命令   递归子目录或文件   用户名   目录
+sudo chown -R             dev-one codes
+```
+
+`chgrp`修改文件和目录
+
+```shell
+#    命令   递归子目录或文件   用户名   目录
+sudo chgrp -R              dev    codes
+```
