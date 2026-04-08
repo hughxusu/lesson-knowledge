@@ -3,6 +3,7 @@
     * [Linux终端使用](docs/a-linux/b-命令.md)
     * [连接服务器](docs/a-linux/c-服务器.md)
     * [用户与权限管理](docs/a-linux/d-用户.md)
+    * [其它命令](docs/a-linux/e-其它.md)
 
 * Mac使用
     * [Mac安装与配置](docs/b-mac/mac配置.md)
