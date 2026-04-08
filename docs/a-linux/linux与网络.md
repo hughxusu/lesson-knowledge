@@ -1,18 +1,4 @@
-# Linux/网络
-
-## 网络基础
-
 ### 用户管理
-
-#### 添加新用户
-
-```shell
-useradd xiaoming # 添加用户
-passwd xiaoming # 设置密码
-
-userdel xiaoming # 删除用户
-userdel -r xiaoming # 删除用户及主目录
-```
 
 #### 运行级别
 
@@ -23,44 +9,6 @@ init [0-6]
 ```
 
 修改运行级别是，需要先改为单用户模式，只有单用户模式才不会调用启动文件
-
-#### 权限管理
-
-* 组管理
-
-```shell
-groupadd policeman # 添加组
-cat /etc/group # 查看组
-```
-
-* 用户组管理
-
-```shell
-useradd -g policeman xiaoming # 将xiaoming添加到policeman组中
-cat /etc/passwd # 查看用户
-
-# 用户名:密码:用户id:组id:注释(无):用户目录:shell解释器
-hughxusu:x:1002:1002::/home/hughxusu/:/bin/bash
-
-usermod -g policeman along # 将用户along添加到policeman组中
-usermod -d xiaoming along # 改变用户登录的初始目录
-```
-
-* 权限操作
-
-```shell
-# 操作权限:文件是1或文件夹下文件数:文件所有者:文件所有组:文件大小(字节):创建时间:文件名
-drwxrwxr-x   38 xusu  wheel  1216 Sep 29 09:19 Cellar
-# -普通文件 d目录 l链接文件
-# 文件类型
-# 文件所有者权限 r可读4 w可选2 x可执行1
-# 文件所在组对该文件的权限
-# 其他用户的权限
-
-chmod 777 along # 修改文件夹权限
-chown xusu Frameworks/ # 修改文件夹Frameworks用户所有者为xusu
-chgrp policeman Frameworks/ # 修改文件夹Frameworks的所有组为policeman
-```
 
 ### Linux常用命令
 
@@ -76,13 +24,6 @@ ln -s /home/xioaming/a.out toA
 ```shell
 find / -name aa.java # 从根目录查找 aa.java文件
 # find 可以按照查找，具体查询手册
-```
-
-* 重定向命令
-
-```shell
-grep "hello" aa.java > a.bak # 保存到a.bak文件中
-grep "hello" aa.java >> a.bak # 保存到a.bak文件中，追加写入
 ```
 
 * 挂载
@@ -111,24 +52,6 @@ date # 显示系统时间
 
 ```shell
 export PATH=$PATH:/root # 临时加入环境变量
-```
-
-* `echo`显示某些变量
-
-```shell
-echo $PATH
-```
-
-* `whoami`打印当前用户
-
-* 查看登录情况
-
-```shell
-# 查看登录用户
-who
-
-# 与who类似
-w
 ```
 
 * 归档
@@ -173,18 +96,6 @@ which git
 netstat -nltp
 ```
 
-### Mac下常用命令
-
-* 文件操作命令
-
-```shell
-# pkg-config 安装
-brew install pkg-config
-
-# mac下查找库文件命令
-pkg-config --libs libavformat
-```
-
 ### 环境配置
 
 环境配置文件
@@ -194,21 +105,6 @@ pkg-config --libs libavformat
 
 PATH=$PATH:/home/java/bin # 在原path下追加
 export JAVA_HOME # 导出路径
-```
-
-用户文件夹下`.bash_profile`用户环境变量，在`/etc/profile`可以修改所有用户的环境变量
-
-```shell
-# 在 .bash_profile 环境路径，只控制当前用户
-
-PATH=$PATH:/home/java/bin
-```
-
-#### 变量
-
-```shell
-PATH # 执行程序搜索路径
-LD_LIBRARY_PATH # 动态库搜索路径
 ```
 
 ### linux分区
@@ -224,21 +120,7 @@ df # 查看磁盘使用情况
 df -h
 ```
 
-### shell
-
-```mermaid
-graph LR;
-a(命令)-->b(shell);
-b-->c((内核))
-```
-
-Shell：将命令解释成内核可执行的代码
-
-| shell名称 | 开发者     | 命令名称           |
-| --------- | ---------- | ------------------ |
-| Bourne    | S.R.Bourne | /bin/sh或/bin/bash |
-| C         | Bill Joy   | /bin/csh           |
-| Kom       | David      | /bin/ksh           |
+### 
 
 ```shell
 env # 显示环境变量
@@ -275,37 +157,6 @@ LOGNAME=xusu
 NVM_BIN=/Users/xusu/.nvm/versions/node/v10.15.3/bin
 CONDA_DEFAULT_ENV=base
 _=/usr/bin/env
-```
-
-* shell管理
-
-```shell
-chsh -s /bin/csh # 修改当前shell为csh
-```
-
-#### shell执行顺序
-
-用户登录后自动执行shell脚本文件
-
-* `.bashrc` 用户登录后执行的命令
-* `.bash_profile` 配置用户的环境变量
-* `/etc/profile` 配置系统的环境变量，公用环境变量
-
-### 网络
-
-```shell
-ping www.baidu.com # 查看百度ip
-tracert www.baidu.com # 查看路由路径，linux
-traceroute www.baidu.com # 查看路由路径，mac
-ifconfig # 查看ip情况
-
-# 网络配置临时生效，重启后回复原有ip
-ifconfig eth0 x.x.x.x # 设置网卡ip
-ifconfig eth0 network x.x.x.x # 对子网掩码设置 
-
-netstat # 显示目前的网络情况，查看端口占用
-netstat -an # 按照端口来排序
-netstat -anp # 显示进程占用网络情况
 ```
 
 ### 进程管理

@@ -245,6 +245,20 @@ sudo usermod -g sudo dev-one
 sudo usermod -s /bin/bash dev-one
 ```
 
+Shell将命令解释成内核可执行的代码
+
+```mermaid
+graph LR;
+a(命令)-->b(shell);
+b-->c((内核))
+```
+
+* Ubuntu默认的Shell是`sh`只有基础功能，`bash`是`sh`的增强版是常用Shell。
+* 用户登录后自动执行Shell脚本文件
+  * 用户文件夹下`.bashrc`用户登录后执行的命令。
+  * 用户文件夹下`.bash_profile`配置用户的环境变量。
+  * `/etc/profile`配置系统的环境变量，公用环境变量，可以修改所有用户的环境变量。
+
 ### 查看程序位置
 
 `which`命令可以查看可执行程序的位置，Linux操作系统中的部分命令就是可执行程序。
