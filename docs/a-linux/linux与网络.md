@@ -1,37 +1,6 @@
 ### 用户管理
 
-#### 运行级别
-
-```shell
-init [0-6]
-# 0关机 1单用户 2多用户状态没有网络服务 3多用户状态有网络服务（常用状态）
-# 4系统未使用保留给用户 5图形界面 6系统重启
-```
-
-修改运行级别是，需要先改为单用户模式，只有单用户模式才不会调用启动文件
-
 ### Linux常用命令
-
-* 建立符号链接
-
-```shell
-# ln -s 源 目标
-ln -s /home/xioaming/a.out toA
-```
-
-* find 查找文件
-
-```shell
-find / -name aa.java # 从根目录查找 aa.java文件
-# find 可以按照查找，具体查询手册
-```
-
-* 挂载
-
-```shell
-mount /mnt/cdrom
-umount /mnt/cdrom
-```
 
 * 其他
 
@@ -40,12 +9,6 @@ history # 查阅最近使用命令
 history 10 # 最近10个命令
 !5 # 执行历史变化为5的命令
 ! # 上一个命令
-```
-
-* 设置系统时间
-
-```shell
-date # 显示系统时间
 ```
 
 * `export`命令
@@ -78,18 +41,6 @@ gzip a.tar
 gzi p -d a.tar.gz
 ```
 
-* 查询文件类型
-
-```shell
-file a.out
-```
-
-* 查询程序位置
-
-```shell
-which git
-```
-
 * 使用断开查询
 
 ```shell
@@ -109,18 +60,9 @@ export JAVA_HOME # 导出路径
 
 ### linux分区
 
-* 基本分区（Primary Partion）：分区后不能在分区，分区后可以马上使用，也叫主分区。
-* 扩展分区（Extension Partion）：需要进一步分区才能使用，必须二次分区。二次分区的结果是逻辑分区（Logical Partion）。逻辑分区数量可以有任意个。逻辑分区从5开始排号
 
-基本分区和扩展分区数目之和不能大于4个。上述概念针对一块硬盘。
 
-```shell
-fdisk -l # 查看linux系统分区具体情况
-df # 查看磁盘使用情况
-df -h
-```
 
-### 
 
 ```shell
 env # 显示环境变量
@@ -159,68 +101,7 @@ CONDA_DEFAULT_ENV=base
 _=/usr/bin/env
 ```
 
-### 进程管理
 
-进程：正在执行的程序，进程有独立的地址空间。每个进程都分配一个ID号，进程可以有前台和后台两种形式存在。一般情况下，系统服务都是后台进程。
-
-线程：轻量级进行，没有独立的地址空间。线程不能独立存在，由进程创建。
-
-#### 查询进程
-
-```shell
-ps -a # 显示当前终端的所有进程信息
-ps -u # 以用户的格式显示进程信息
-ps -x # 显示后台进程运行的参数
-
-ps -aux
-
-# 用户| 进程号| cpu占用率| 内存占用率| 虚拟内存| 物理内存| 状态| 启动时间| 时间| 启动命令
-USER       PID %CPU %MEM    VSZ   RSS TTY      STAT START   TIME COMMAND
-root         1  0.0  0.0 185708  5768 ?        Ss   7月05   4:10 /sbin/init splash
-root         2  0.0  0.0      0     0 ?        S    7月05   0:02 [kthreadd]
-root         4  0.0  0.0      0     0 ?        I<   7月05   0:00 [kworker/0:0H]
-root         6  0.0  0.0      0     0 ?        I    7月05   0:00 [kworker/u32:0]
-root         7  0.0  0.0      0     0 ?        I<   7月05   0:00 [mm_percpu_wq]
-root         8  0.0  0.0      0     0 ?        S    7月05   0:50 [ksoftirqd/0]
-```
-
-#### 终止进程
-
-```shell
-kill [进程号]
-kill -9 [进程号] # 强制关机
-```
-
-#### 进程动态监控
-
-```shell
-top # 实时监控进程
-
-     # 系统时间   操作系统运行时间    当前登录用户数  当前系统的负载情况
-top - 21:08:34 up 109 days,  5:36,  7 users,  load average: 2.24, 2.33, 2.03
-# 进程数             运行数      休眠数           停止数        僵尸进程
-Tasks: 541 total,   1 running, 423 sleeping,   6 stopped,   1 zombie
-# cpu状态
-%Cpu(s):  7.6 us,  4.1 sy,  0.0 ni, 87.8 id,  0.3 wa,  0.0 hi,  0.1 si,  0.0 st
-# 内存     总数             空闲           使用
-KiB Mem : 65742228 total, 14883476 free, 25842364 used, 25016388 buff/cache
-# 虚拟内存    总数						空闲            使用
-KiB Swap:   998396 total,   775600 free,   222796 used. 37554988 avail Mem 
-
- PID USER      PR  NI    VIRT    RES    SHR S  %CPU %MEM     TIME+ COMMAND                                                                                                                                                                                   
- 8822 tj        20   0 28.938g 2.904g 1.211g S 104.3  4.6  15:46.82 python                                                                                                                                                                                    
- 9051 tj        20   0 17.108g 1.836g 124692 S  21.9  2.9   1:35.91 python                                                                                                                                                                                    
- 9054 tj        20   0 17.108g 1.836g 124628 S  21.9  2.9   1:33.20 python                                                                                                                                                                                    
- 8880 root      20   0       0      0      0 S  16.2  0.0   2:33.53 nv_queue                                                                                                                                                                                  
-25319 999       20   0  9.910g 804484   7904 S   4.6  1.2  11833:09 beam.smp   
-
-
-# 输入top后
-u + 回车 输入用户名 # 监视特定用户
-k + 回车 输入进程号 # 终止指定进程
-
-top -d 10 # 指定系统更新进程的时间为10秒
-```
 
 ### Vim
 
