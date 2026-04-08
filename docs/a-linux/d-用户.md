@@ -83,7 +83,7 @@ chmod -R 777 codes/
 * `-R`递归子目录或文件。
 * `777`第一个7表示拥有者权限，第二个7表示组权限，第三个7表示其他用户权限。
 
-![](../../images/linux/004_文件权限示意图.png)
+![](https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/004_文件权限示意图.png)
 
 > [!warning]
 >
