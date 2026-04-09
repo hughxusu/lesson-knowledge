@@ -132,11 +132,78 @@ ln codes/hello.sh hello.sh
 
 <img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/v2-4e7e372e2908b4b2009290978e4cdd5e_1440w.jpg" style="zoom:95%;" />
 
+3. 使用`ls -l`可以查看文件的链接
+
+```shell
+which vi
+ls -l /usr/bin/vi
+```
+
 ## 打包与压缩
 
 打包和压缩是在客户端和服务器中传递文件的必要步骤。在Linux中使用`tar`命令可以完成打包和压缩的操作。
 
 ### 打包
 
+打包一起的文件一般用`xxx.tar`表示，打包命令为
+
+```shell
+tar -cvf code.tar codes/
+```
+
+* `c`打包文件；`v`显示打包详细过程和进度；`f`指定打包后的文件名，必须放选项最后。
+* `code.tar`打包后的文件名。
+* `codes/`被打包的文件夹。
+
+```shell
+tar -xvf code.tar -C tars
+```
+
+* `-x`解包文件；
+* `code.tar`要解压的压缩包。
+* `-C`解包到指定目，注意这个目录必须存在。如果不指定这个参数，解包到当前目录。
+
 ### 压缩
+
+`gzip`压缩格式是在打包的基础上对数据进行压缩，使用`z`参数表示压缩为`gzip`格式，`gzip`的格式后缀名为`xxx.tar.gz`。
+
+```shell
+tar -zcvf code.tar.gz codes/
+```
+
+* `-zcvf`打包压缩一起执行，会现将文件压缩后再打包。
+
+解压文件
+
+```shell
+tar -zxvf code.tar.gz -C gz/
+```
+
+`bzip2`压缩格式比`gzip`的压缩率更高，使用`j`参数表示压缩为`bzip2`格式，`bzip2`的格式后缀名为`xxx.tar.bz2`。
+
+```shell
+tar -jcvf code.tar.bz2 codes
+```
+
+解压文件
+
+```shell
+tar -jxvf code.tar.bz2 -C gz
+```
+
+## Vim编辑器
+
+Vim和Vi是Linux下的文件编辑工具，可以用编辑代码、配置文件等文本文件，也可以通过`ssh`登陆到服务器上使用。Vim是Vi的进阶版，支持代码补全、编译等编程功能。在Ubuntu中`vi`是`vim`的软连接。Vim的特点：
+
+* 没有图形界面的功能强大的编辑器。
+* 只能是编辑文本内容，不能对字体、段落进行排版。
+* 不支持鼠标操作，让程序员的手指始终保持在键盘的核心区域。
+
+### 打开文件
+
+
+
+<img src="../../images/linux/003_vi的模式.png" style="zoom:85%;" />
+
+
 
