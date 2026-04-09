@@ -137,12 +137,12 @@ Mac电脑上最方面的SSH客户端为[Termius](https://termius.com/)，Termius
 
 选择传递文件的目录
 
-<img src="../../images/linux/Xnip2026-04-09_18-40-14.jpg" style="zoom:60%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/Xnip2026-04-09_18-40-14.jpg" style="zoom:60%;" />
 
 本地目录要输入账号名和密码
 
-<img src="../../images/linux/Xnip2026-04-09_18-49-47.jpg" style="zoom:65%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/Xnip2026-04-09_18-49-47.jpg" style="zoom:65%;" />
 
 文件传送
 
-<img src="../../images/linux/Xnip2026-04-09_18-59-01.jpg" style="zoom:65%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/Xnip2026-04-09_18-59-01.jpg" style="zoom:65%;" />

@@ -76,7 +76,7 @@ ps aux
 * `u`显示进程的详细状态。
 * `x`显示没有控制终端的进程。
 
-<img src="../../images/linux/Xnip2026-04-08_18-31-50.jpg" style="zoom:55%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/Xnip2026-04-08_18-31-50.jpg" style="zoom:55%;" />
 
 2. 强制终止进程
 
@@ -130,7 +130,7 @@ ln codes/hello.sh hello.sh
 
 软连接与硬链接的区别
 
-<img src="../../images/linux/v2-4e7e372e2908b4b2009290978e4cdd5e_1440w.jpg" style="zoom:95%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/v2-4e7e372e2908b4b2009290978e4cdd5e_1440w.jpg" style="zoom:95%;" />
 
 ## 打包与压缩
 
