@@ -129,15 +129,20 @@ Mac电脑上最方面的SSH客户端为[Termius](https://termius.com/)，Termius
 
 <img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/Xnip2026-04-05_21-36-08.jpg" style="zoom:50%;" />
 
-连接上传文件服务器
+### 文件传递
+
+有时候需要在和服务器之间上传文件，Termius同样集成了这一功能。
 
 <img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/Xnip2026-04-05_21-45-41.jpg" style="zoom:55%;" />
 
-选择已经创建SSH客户端
+选择传递文件的目录
 
-<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/Xnip2026-04-05_21-52-28.jpg" style="zoom:60%;" />
+<img src="../../images/linux/Xnip2026-04-09_18-40-14.jpg" style="zoom:60%;" />
 
-上传文件到服务器
+本地目录要输入账号名和密码
 
-<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/Xnip2026-04-05_21-54-02.jpg" style="zoom:50%;" />
+<img src="../../images/linux/Xnip2026-04-09_18-49-47.jpg" style="zoom:65%;" />
 
+文件传送
+
+<img src="../../images/linux/Xnip2026-04-09_18-59-01.jpg" style="zoom:65%;" />

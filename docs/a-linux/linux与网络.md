@@ -58,11 +58,11 @@ PATH=$PATH:/home/java/bin # 在原path下追加
 export JAVA_HOME # 导出路径
 ```
 
+
+
+
+
 ### linux分区
-
-
-
-
 
 ```shell
 env # 显示环境变量
