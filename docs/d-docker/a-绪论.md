@@ -6,7 +6,7 @@ Docker是一种能够将应用程序及其所有依赖项打包成一个标准�
 >
 > 问什么要使用Docker？
 
-<img src="../../images/docker/vmware.jpg" style="zoom:80%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/docker/vmware.jpg" style="zoom:80%;" />
 
 Docker容器类似于常见的虚拟机技术，但其有如下特点：
 
@@ -15,7 +15,7 @@ Docker容器类似于常见的虚拟机技术，但其有如下特点：
 3. 容器之间是隔离的，容器里的程序会认为自己拥有独立的操作系统、文件系统、网络接口和进程树。如果A容器内的程序存在内存溢出导致程序崩溃，不会影响整台机器。
 4. 快速部署与扩展，通过简单指令就可以快速部署数据库、web服务程序，省略的复杂的安装过程。
 
-<img src="../../images/docker/20230310173333224.png" style="zoom:90%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/docker/20230310173333224.png" style="zoom:90%;" />
 
 Docker技术应用的领域
 
@@ -32,7 +32,7 @@ Docker系统主要有三部分分构成
 3. 仓库（Docker Registry），这是存放镜像的地方。
 
 
-<img src="../../images/docker/687d7a52cccb7374efbbf8ca_image2-49.png" style="zoom:70%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/docker/687d7a52cccb7374efbbf8ca_image2-49.png" style="zoom:70%;" />
 
 Docker官方维护的一个云端资源库[Docker hub](https://hub.docker.com/)，也是目前全球最大的容器镜像托管平台，这个平台类似于Github。
 
@@ -43,14 +43,14 @@ Docker官方维护的一个云端资源库[Docker hub](https://hub.docker.com/)�
 
 从传统部署到容器化部署
 
-<img src="../../images/docker/deployment.png" alt="img" style="zoom:80%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/docker/deployment.png" alt="img" style="zoom:80%;" />
 
 容器化部署和虚拟机的主要差别是，容器之间共享了操作系统的内核层，才带来了性能和体积上的质变。
 
 * 容器里的进程在宿主机看来，本质上就是一个普通的进程，只是被加上了“隔离围栏”。
 * 容器启动时，内核早已在宿主机上跑着了，它只是创建了一个隔离环境并启动进程
 
-<img src="../../images/docker/Linux-Containers.png" style="zoom:70%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/docker/Linux-Containers.png" style="zoom:70%;" />
 
 ## Docker的安装
 
@@ -69,7 +69,7 @@ Docker官方维护的一个云端资源库[Docker hub](https://hub.docker.com/)�
 cat /etc/group
 ```
 
-<img src="../../images/docker/Xnip2026-04-10_20-15-25.jpg" style="zoom:45%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/docker/Xnip2026-04-10_20-15-25.jpg" style="zoom:45%;" />
 
 如果希望用户可以使用Docker命令，可以将用户加入`docker`用户组
 
