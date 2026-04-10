@@ -31,12 +31,26 @@ Docker系统主要有三部分分构成
 2. 宿主机（Docker Host）， 一个持续运行的后台进程，接收来自Client的请求，并负责管理所有的Docker 对象，如镜像、容器、网络和数据卷。
 3. 仓库（Docker Registry），这是存放镜像的地方。
 
-<img src="../../images/docker/687d7a52cccb7374efbbf8ca_image2-49.png" style="zoom:75%;" />
+
+<img src="../../images/docker/687d7a52cccb7374efbbf8ca_image2-49.png" style="zoom:70%;" />
 
 Docker官方维护的一个云端资源库[Docker hub](https://hub.docker.com/)，也是目前全球最大的容器镜像托管平台，这个平台类似于Github。
 
 * 镜像托管：用户可以将己构建的镜像上传到这里，以便在其他机器或服务器上随时下载。
 * 官方镜像：Docker官方会维护一套高质量、经过安全验证的镜像。
+
+### 理解Docker容器
+
+从传统部署到容器化部署
+
+<img src="../../images/docker/deployment.png" alt="img" style="zoom:80%;" />
+
+容器化部署和虚拟机的主要差别是，容器之间共享了操作系统的内核层，才带来了性能和体积上的质变。
+
+* 容器里的进程在宿主机看来，本质上就是一个普通的进程，只是被加上了“隔离围栏”。
+* 容器启动时，内核早已在宿主机上跑着了，它只是创建了一个隔离环境并启动进程
+
+<img src="../../images/docker/Linux-Containers.png" style="zoom:70%;" />
 
 ## Docker的安装
 
