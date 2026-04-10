@@ -220,14 +220,14 @@ vi编辑器有三种工作模式
 2. 底线命令模式： 执行保存、退出等操作。 
 3. 编辑模式：进行内容编辑。
 
-<img src="../../images/linux/vim-vi-workmodel.png" style="zoom:65%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/vim-vi-workmodel.png" style="zoom:65%;" />
 
 ### 命令模式
 
 1. 在命令模式下，如果移动光标需要使用快捷键
    * `h`向左；`j`向下；`k`向上；`l`向右。
 
-<img src="../../images/linux/Xnip2026-04-10_09-06-10.jpg" style="zoom:65%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/Xnip2026-04-10_09-06-10.jpg" style="zoom:65%;" />
 
 2. 行数移动`gg`移动到文件顶部，`G`文件移动到文件末尾。
 3. 使用`/`查找文件中的内容
@@ -247,7 +247,7 @@ vi编辑器有三种工作模式
 
 常用命令速查图
 
-<img src="../../images/linux/vim-cheat-sheet-full.png" style="zoom:45%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/vim-cheat-sheet-full.png" style="zoom:45%;" />
 
 [vim的详细使用](https://www.runoob.com/linux/linux-vim.html)
 
