@@ -1,41 +1,8 @@
 # Docker安装
 
-## Ubuntu从Docker仓库下
-
-### 直接通过安装包安装
-
-```shell
-# 安装包
-sudo dpkg -i containerd.io_1.2.5-1_amd64.deb
-sudo dpkg -i docker-ce-cli_18.09.5_3-0_ubuntu-bionic_amd64.deb
-sudo dpkg -i docker-ce_18.09.5_3-0_ubuntu-bionic_amd64.deb
-
-# docker配置
-sudo groupadd docker #添加docker用户组，一般安装成功后存在docker用户组，不需要添加
-sudo gpasswd -a $USER docker #将登陆用户加入到docker用户组中
-newgrp docker #更新用户组
-docker ps #测试docker命令是否可以使用sudo正常使用
-```
-
-# 命令
-
-<img src="http://upload-images.jianshu.io/upload_images/4324380-c1011fea330f8f24.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240" alt="命令关系图" style="zoom:70%;" />
-
-## 帮助命令
-
-```shell
-docker info # 查看常用信息
-docker --help # 帮助命令
-```
-
 ## 镜像命令
 
 ```shell
-docker images # 查看镜像
-docker images -q # 只显示镜像id
-docker search mysql # 搜索镜像
-docker search mysql:5.6 --filter=stars=3 # 点赞数大于3的镜像
-docker pull mysql:5.6 # 拉取5.6镜像，省略拉取最新版
 docker rmi hello-world # 删除镜像，不指定删除最新版
 docker rmi -f hello-world:latest mysql:5.6 # 删除多个镜像
 docker rmi -f $(docker images -qa) # 删除全部镜像
@@ -48,9 +15,6 @@ docker load < /home/java.tar.gz
 
 # 镜像重命名
 docker tag [原始镜像名] [新镜像名]
-
-# 查看镜像历史
-docker history 
 ```
 
 ## 容器命令

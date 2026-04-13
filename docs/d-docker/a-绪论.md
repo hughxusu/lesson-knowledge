@@ -15,7 +15,7 @@ Docker容器类似于常见的虚拟机技术，但其有如下特点：
 3. 容器之间是隔离的，容器里的程序会认为自己拥有独立的操作系统、文件系统、网络接口和进程树。如果A容器内的程序存在内存溢出导致程序崩溃，不会影响整台机器。
 4. 快速部署与扩展，通过简单指令就可以快速部署数据库、web服务程序，省略的复杂的安装过程。
 
-<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/docker/20230310173333224.png" style="zoom:90%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/docker/20230310173333224.png" style="zoom:80%;" />
 
 Docker技术应用的领域
 
@@ -31,8 +31,8 @@ Docker系统主要有三部分分构成
 2. 宿主机（Docker Host）， 一个持续运行的后台进程，接收来自Client的请求，并负责管理所有的Docker 对象，如镜像、容器、网络和数据卷。
 3. 仓库（Docker Registry），这是存放镜像的地方。
 
-
 <img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/docker/687d7a52cccb7374efbbf8ca_image2-49.png" style="zoom:70%;" />
+
 
 Docker官方维护的一个云端资源库[Docker hub](https://hub.docker.com/)，也是目前全球最大的容器镜像托管平台，这个平台类似于Github。
 
@@ -81,6 +81,42 @@ sudo usermod -G sudo docker
 
 ```shell
 docker --version
+```
+
+安装Docker后需要设置国内镜像加速器，通过修改`/etc/docker/daemon.json`的配置文件来使用加速器，在文件中添加
+
+```shell
+{
+  "registry-mirrors": [
+    "https://hub-mirror.c.163.com",
+    "https://docker.m.daocloud.io",
+    "https://docker.1ms.run",
+    "https://docker.xuanyuan.me"
+  ]
+}
+```
+
+配置完地址后，启动镜像服务
+
+```shell
+sudo systemctl daemon-reload
+sudo systemctl restart docker
+```
+
+查看镜像服务器是否配置成功
+
+```shell
+docker info | grep "Registry Mirrors" -A 3
+```
+
+> [!warning]
+>
+> 目前的阿里云镜像加速器，只针对阿里云服务器有效，非阿里云机器基本不能用。
+
+查看Docker的配置信息
+
+```shell
+docker info
 ```
 
 ### 在Mac安装Docker
