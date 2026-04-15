@@ -12,11 +12,11 @@ a(搜索镜像)-->b(下载镜像)-->c(启动容器)
 
 [Docker hub](https://hub.docker.com/)是目前全球最大的容器镜像托管平台，用户可以在上面的到需要的镜像。
 
-<img src="../../images/docker/Xnip2026-04-14_19-43-31.jpg" style="zoom:60%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/docker/Xnip2026-04-14_19-43-31.jpg" style="zoom:60%;" />
 
 找到镜像后选择可以选择合适的版本
 
-<img src="../../images/docker/Xnip2026-04-14_19-41-01.jpg" style="zoom:60%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/docker/Xnip2026-04-14_19-41-01.jpg" style="zoom:60%;" />
 
 ### 镜像操作
 
@@ -78,7 +78,7 @@ docker run nginx:latest
 docker ps
 ```
 
-<img src="../../images/docker/Xnip2026-04-15_13-35-21.jpg" style="zoom:80%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/docker/Xnip2026-04-15_13-35-21.jpg" style="zoom:80%;" />
 
 查看容器的其他命令
 
@@ -149,7 +149,7 @@ docker run -d --name demo-nginx nginx
 
 使用端口映射
 
-<img src="../../images/docker/1681604245712.jpeg" style="zoom:70%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/docker/1681604245712.jpeg" style="zoom:70%;" />
 
 ```··shell
 docker run -d --name demo-nginx -p 8080:80 nginx:latest 
@@ -157,4 +157,4 @@ docker run -d --name demo-nginx -p 8080:80 nginx:latest
 
 * `-p 8080:80`增加容器端口映射`8080`本机端口，`80`容器端口。
 
-<img src="../../images/docker/Xnip2026-04-15_14-21-15.jpg" style="zoom:85%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/docker/Xnip2026-04-15_14-21-15.jpg" style="zoom:85%;" />

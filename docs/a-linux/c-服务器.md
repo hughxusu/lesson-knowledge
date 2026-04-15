@@ -111,11 +111,11 @@ ping www.baidu.com
 
 阿里云服务器默认只打开了，SSH服务器端口和Web服务器端口，用户自己部署服务时需要设置规则打开接口
 
-<img src="../../images/linux/Xnip2026-04-15_22-13-59.jpg" style="zoom:45%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/Xnip2026-04-15_22-13-59.jpg" style="zoom:45%;" />
 
 给服务器添加访问规则
 
-<img src="../../images/linux/Xnip2026-04-15_23-10-58.jpg" style="zoom:40%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/Xnip2026-04-15_23-10-58.jpg" style="zoom:40%;" />
 
 ### SSH客户端
 
