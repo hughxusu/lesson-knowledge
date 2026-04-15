@@ -143,6 +143,10 @@ Mac电脑上最方面的SSH客户端为[Termius](https://termius.com/)，Termius
 
 <img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/Xnip2026-04-09_18-49-47.jpg" style="zoom:65%;" />
 
+> [!warning]
+>
+> Mac电脑需要设置`系统设置->通用->共享`中开启远程登录。
+
 文件传送
 
 <img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/Xnip2026-04-09_18-59-01.jpg" style="zoom:65%;" />

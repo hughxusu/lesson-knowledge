@@ -22,9 +22,8 @@ docker tag [原始镜像名] [新镜像名]
 ### 基本操作
 
 ```shell
-docker ps # 查看所有当前运行进程
+
 docker ps -l # 查看上一个容器
-docker ps -a # 查看所有使用过的容器
 docker ps -n 3 # 查看上3次运行的容器
 docker ps -lq # 只显示上一次的容器编号
 docker top # 容器内运行的进程
@@ -33,9 +32,9 @@ docker top # 容器内运行的进程
 # 交互式启动 -it 参数
 docker run -it --name cent_demo centos # --name 进程别名，省略系统自动分配
 exit # 退出交互式容器，并结束进程。ctrl+p+q 容器不停止退出
-docker start [容器id] # 重新启动容器，启动后进入后台运算方式
+
 docker start -i b9c025a4d557 # 已交互方式重启容器
-docker restart [容器id] # 重新启动退去容器
+
 
 # 以ctrl+p+q退出后可以使用
 docker attach [容器id] # 进入退出后没有停止的容器
@@ -84,8 +83,6 @@ docker stop $(docker ps -aq)
 # 删除所有的容器
 docker rm $(docker ps -aq)
 
-# 删除所有的镜像
-docker rmi $(docker images -q)
 
 # 删除所有不使用的镜像
 docker image prune --force --all
