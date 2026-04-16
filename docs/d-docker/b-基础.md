@@ -158,3 +158,32 @@ docker run -d --name demo-nginx -p 8080:80 nginx:latest
 * `-p 8080:80`增加容器端口映射`8080`本机端口，`80`容器端口。
 
 <img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/docker/Xnip2026-04-15_14-21-15.jpg" style="zoom:85%;" />
+
+* [阿里云需要设置服务器IP和端口的号访问权限](/docs/a-linux/c-服务器?id=域名和端口号)，可以访问Nginx服务。
+
+修改Nginx容器中的访问页
+
+1. 进入容器容器内部操作
+
+```shell
+docker exec -it demo-nginx /bin/bash
+```
+
+* `exec`在已启动的容器中执行一个命令。
+* `-i`交互模式；`-t`使用虚拟终端。
+* `demo-nginx`要进入的容器名；`/bin/bash`在容器中执行的程序。
+
+2. 进入服务器页面位置，服务页面为位置符合Nginx服务器的规范。
+
+```shell
+cd /usr/share/nginx/html/
+```
+
+3. 修改`index.html`页面内容
+
+```shell
+echo '<h1>Hello, docker!</h1>' > index.html
+```
+
+4. `exit`命令，从容器中退出。
+
