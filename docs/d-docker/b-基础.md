@@ -161,7 +161,9 @@ docker run -d --name demo-nginx -p 8080:80 nginx:latest
 
 * [阿里云需要设置服务器IP和端口的号访问权限](/docs/a-linux/c-服务器?id=域名和端口号)，可以访问Nginx服务。
 
-修改Nginx容器中的访问页
+## 创建个人镜像
+
+修改Nginx容器中的访问页，作为新的镜像部署
 
 1. 进入容器容器内部操作
 
@@ -186,4 +188,67 @@ echo '<h1>Hello, docker!</h1>' > index.html
 ```
 
 4. `exit`命令，从容器中退出。
+4. 根据容器生成镜像
+
+```shell
+docker commit -m 'demo nginx image' demo-nginx my-nginx:1.0
+```
+
+* `-m 'demo nginx image'`导出镜像的说明信息。
+* `demo-nginx`容器的名称。
+* `my-nginx`制作镜像的名称。
+* `:1.0`镜像的版本标识。
+
+5. 将镜像导入到文件
+
+```shell
+docker save my-nginx:1.0 > ./my-nginx.tar
+```
+
+* `my-nginx:1.0`要导出的镜像名称。
+* `> ./my-nginx.tar`导出的路径和文件。
+
+6. 将文件导入为镜像
+
+```shell
+docker load < ./my-nginx.tar 
+```
+
+* `< ./my-nginx.tar`导入为镜像的文件。
+
+### 华为云SWR
+
+Docker hub服务器位于国外，ECS或国内网络经常无法链接，华为云提供的SWR镜像服务器，可以帮助用户保存私人镜像用于项目部署。登录华为云后搜索swr
+
+![](../../images/docker/Xnip2026-04-17_14-23-56.jpg)
+
+为镜像仓库创建组织
+
+<img src="../../images/docker/Xnip2026-04-17_14-35-08.jpg" style="zoom:90%;" />
+
+生成登录指令，并在服务器终端中输入登录指令，可以登录SWR上传镜像
+
+![](../../images/docker/Xnip2026-04-17_14-41-29.jpg)
+
+镜像重命名
+
+```shell
+docker tag my-nginx:1.0 swr.cn-north-4.myhuaweicloud.com/hughxusu/my-nginx:1.0
+```
+
+* `my-nginx:1.0`原始镜像名。
+* `swr.cn-north-4.myhuaweicloud.com/`上传服务器
+* `hughxusu/my-nginx:1.0`新镜像名。
+
+> [!warning]
+>
+> 向镜像服务器上传镜像，镜像名格式为`服务器路径/组织名/镜像名:版本号`，如果没有服务器路径，默认上传到Docker hub。
+
+上传镜像文件
+
+```shell
+docker push swr.cn-north-4.myhuaweicloud.com/hughxusu/my-nginx:1.0
+```
+
+
 

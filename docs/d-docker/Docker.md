@@ -3,15 +3,9 @@
 ## 镜像命令
 
 ```shell
-docker rmi hello-world # 删除镜像，不指定删除最新版
 docker rmi -f hello-world:latest mysql:5.6 # 删除多个镜像
 docker rmi -f $(docker images -qa) # 删除全部镜像
 
-# 导出本地镜像
-docker save java > /home/java.tar.gz
-
-# 从本地文件导入镜像
-docker load < /home/java.tar.gz
 
 # 镜像重命名
 docker tag [原始镜像名] [新镜像名]
@@ -28,10 +22,6 @@ docker ps -n 3 # 查看上3次运行的容器
 docker ps -lq # 只显示上一次的容器编号
 docker top # 容器内运行的进程
 
-# 启动容器 run 命名
-# 交互式启动 -it 参数
-docker run -it --name cent_demo centos # --name 进程别名，省略系统自动分配
-exit # 退出交互式容器，并结束进程。ctrl+p+q 容器不停止退出
 
 docker start -i b9c025a4d557 # 已交互方式重启容器
 
@@ -39,13 +29,9 @@ docker start -i b9c025a4d557 # 已交互方式重启容器
 # 以ctrl+p+q退出后可以使用
 docker attach [容器id] # 进入退出后没有停止的容器
 docker exec -t [容器id] ls -l /tmp # 在容器外查询容器内命令
-docker exec -it [容器id]  /bin/bash # 进入容器的相应路径
 
-docker stop [容器id] # 停止容器
 docker kill [容器id] # 强制停止
 
-docker rm [容器id] # 删除已停止的容器
-docker rm -f [容器id] # 强制删除容器
 docker rm -f $(docker ps -qa) # 删除所有容器
 
 docker logs [容器id] # 打印容器日志
@@ -58,8 +44,6 @@ docker inspect [容器id] # 查看容器内的细节
 docker cp [容器id]:/tmp/yum.log ./ # 将容器内的数据拷贝到容器外
 docker cp ./index [容器id]:/tmp/ # 将容器外部的文件复制到容器内部
 
-# 宿主机9000端口映射到容器8080端口，启动bash命令行
-docker run -it --name myjava -p 9000:8080 java bash 
 
 # 暂停容器
 docker pause [容器id]
@@ -67,8 +51,6 @@ docker pause [容器id]
 # 暂停容器继续执行
 docker unpause [容器id]
 
-# 从容器生成镜像
-docker commit -m '信息' [容器id] [生成image名称]
 ```
 
 ### 全选操作
