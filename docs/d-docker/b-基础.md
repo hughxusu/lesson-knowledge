@@ -57,6 +57,12 @@ docker history nginx:alpine
 docker rmi nginx:alpine
 ```
 
+查看命令帮助使用`--help`
+
+```shell
+docker images --help
+```
+
 ## 启动容器
 
 容器是镜像的实例，镜像相当于软件安装包，容器相当于安装好的软件。用户的最终目标是使用软件，启动容器的过程可以看做是在安装软件。
@@ -84,7 +90,6 @@ docker ps
 
 ```shell
 docker ps -a   # 查看所有容器，包括已经停止运行的
-
 ```
 
 启动已经停止的容器
@@ -122,6 +127,15 @@ docker logs [容器id]
 ```shell
 docker rm [容器id]       # 一般删除，必须先将容器停止
 docker rm -f [容器id]    # 强制删除，可以直接删除运作中的容器
+```
+
+批量操作
+
+```shell
+docker ps -aq # -a显示所有容器，-q只显示容器ID
+docker stop $(docker ps -aq)  # 停止所有的容器
+docker rm $(docker ps -aq)  # 删除所有的容器
+docker rm -f $(docker ps -aq)  # 强制删除所有容器
 ```
 
 ### `run`命令的使用
@@ -220,15 +234,15 @@ docker load < ./my-nginx.tar
 
 Docker hub服务器位于国外，ECS或国内网络经常无法链接，华为云提供的SWR镜像服务器，可以帮助用户保存私人镜像用于项目部署。登录华为云后搜索swr
 
-![](../../images/docker/Xnip2026-04-17_14-23-56.jpg)
+![](https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/docker/Xnip2026-04-17_14-23-56.jpg)
 
 为镜像仓库创建组织
 
-<img src="../../images/docker/Xnip2026-04-17_14-35-08.jpg" style="zoom:90%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/docker/Xnip2026-04-17_14-35-08.jpg" style="zoom:90%;" />
 
 生成登录指令，并在服务器终端中输入登录指令，可以登录SWR上传镜像
 
-![](../../images/docker/Xnip2026-04-17_14-41-29.jpg)
+![](https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/docker/Xnip2026-04-17_14-41-29.jpg)
 
 镜像重命名
 
@@ -249,6 +263,3 @@ docker tag my-nginx:1.0 swr.cn-north-4.myhuaweicloud.com/hughxusu/my-nginx:1.0
 ```shell
 docker push swr.cn-north-4.myhuaweicloud.com/hughxusu/my-nginx:1.0
 ```
-
-
-

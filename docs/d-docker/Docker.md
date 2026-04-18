@@ -32,12 +32,6 @@ docker exec -t [容器id] ls -l /tmp # 在容器外查询容器内命令
 
 docker kill [容器id] # 强制停止
 
-docker rm -f $(docker ps -qa) # 删除所有容器
-
-docker logs [容器id] # 打印容器日志
-
-# 以守护进程方式启动
-docker run -d centos # 以后台进行方式启动容器
 
 docker inspect [容器id] # 查看容器内的细节
 
@@ -56,14 +50,6 @@ docker unpause [容器id]
 ### 全选操作
 
 ```shell
-# 列出所有的容器 ID
-docker ps -aq
-
-# 停止所有的容器
-docker stop $(docker ps -aq)
-
-# 删除所有的容器
-docker rm $(docker ps -aq)
 
 
 # 删除所有不使用的镜像
