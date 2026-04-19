@@ -77,7 +77,7 @@ docker volume create app-data
 
 容器的端口可以映射到宿主机上，这样外部访问通过宿主机的端口，就可以访问容器的内容。
 
-<img src="../../images/docker/docker-01-4-.png" style="zoom:45%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/docker/docker-01-4-.png" style="zoom:45%;" />
 
 > [!think]
 >
@@ -102,11 +102,11 @@ docker exec -it nginx-one bash
 * 容器之间可以通过`docker0`通信。
 * 容器也可以通过`docker0`链接主机网络，与外部通信。
 
-<img src="../../images/docker/docker-01-11-.png" style="zoom:45%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/docker/docker-01-11-.png" style="zoom:45%;" />
 
 使用`ip a`命令可以查看所有网卡信息
 
-<img src="../../images/docker/Xnip2026-04-19_09-38-41.jpg" style="zoom:65%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/docker/Xnip2026-04-19_09-38-41.jpg" style="zoom:65%;" />
 
 查看Docker中存在的网络
 
@@ -125,7 +125,7 @@ docker network ls
 docker inspect nginx-two
 ```
 
-<img src="../../images/docker/Xnip2026-04-19_11-48-34.jpg" style="zoom:60%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/docker/Xnip2026-04-19_11-48-34.jpg" style="zoom:60%;" />
 
 进入容器`nginx-one`，测试通过`curl`命令通过容器`docker0`网络的IP访问`nginx-two`的`80`端口，实现网络互访。
 
@@ -153,7 +153,7 @@ docker run -d --name nginx-two -p 8090:80 --network app-net nginx
 >
 > 加入自定义网络后，可以通过容器名实现网络之间的访问，如果是`docker0`不可以。
 
-<img src="../../images/docker/docker-01-10-.png" style="zoom:45%;" />
+<img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/docker/docker-01-10-.png" style="zoom:45%;" />
 
 ## 最佳实践
 
