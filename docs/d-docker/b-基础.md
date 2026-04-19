@@ -154,7 +154,7 @@ docker run [OPTIONS] IMAGE [COMMAND] [ARG...]
 后台启动服务
 
 ```shell
-docker run -d --name demo-nginx nginx
+docker run -d --name nginx-app nginx
 ```
 
 * `-d`表示后台启动服务程序。
@@ -166,7 +166,7 @@ docker run -d --name demo-nginx nginx
 <img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/docker/1681604245712.jpeg" style="zoom:70%;" />
 
 ```··shell
-docker run -d --name demo-nginx -p 8080:80 nginx:latest 
+docker run -d --name nginx-app -p 8080:80 nginx:latest 
 ```
 
 * `-p 8080:80`增加容器端口映射`8080`本机端口，`80`容器端口。
@@ -175,6 +175,13 @@ docker run -d --name demo-nginx -p 8080:80 nginx:latest
 
 * [阿里云需要设置服务器IP和端口的号访问权限](/docs/a-linux/c-服务器?id=域名和端口号)，可以访问Nginx服务。
 
+使用`inspect`可以查看镜像、容器、网络和卷的配置的详细信息
+
+```shell
+docker inspect nginx-app  # 查询容器信息
+docker inspect nginx:latest # 查询网络信息
+```
+
 ## 创建个人镜像
 
 修改Nginx容器中的访问页，作为新的镜像部署
@@ -182,7 +189,7 @@ docker run -d --name demo-nginx -p 8080:80 nginx:latest
 1. 进入容器容器内部操作
 
 ```shell
-docker exec -it demo-nginx /bin/bash
+docker exec -it nginx-app /bin/bash
 ```
 
 * `exec`在已启动的容器中执行一个命令。
@@ -205,7 +212,7 @@ echo '<h1>Hello, docker!</h1>' > index.html
 4. 根据容器生成镜像
 
 ```shell
-docker commit -m 'demo nginx image' demo-nginx my-nginx:1.0
+docker commit -m 'demo nginx image' nginx-app my-nginx:1.0
 ```
 
 * `-m 'demo nginx image'`导出镜像的说明信息。

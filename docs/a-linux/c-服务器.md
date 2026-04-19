@@ -98,6 +98,12 @@ ping www.baidu.com
 
 <img src="https://raw.githubusercontent.com/hughxusu/lesson-knowledge/develop/images/linux/Xnip2026-04-05_20-47-31.jpg" style="zoom:45%;" />
 
+查看服务器网卡信息
+
+```shell
+ip a
+```
+
 ### 域名和端口号
 
 域名就是IP地址的别名，方便用户记忆。端口号：通过端口号可以找到计算机上运行的应用程序。常见服务端口号为

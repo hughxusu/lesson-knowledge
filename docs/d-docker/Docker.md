@@ -1,43 +1,25 @@
-# Docker安装
-
-## 镜像命令
-
-```shell
-docker rmi -f hello-world:latest mysql:5.6 # 删除多个镜像
-docker rmi -f $(docker images -qa) # 删除全部镜像
-
-
-# 镜像重命名
-docker tag [原始镜像名] [新镜像名]
-```
-
 ## 容器命令
 
 ### 基本操作
 
 ```shell
+docker rmi -f hello-world:latest mysql:5.6 # 删除多个镜像
+docker rmi -f $(docker images -qa) # 删除全部镜像
 
 docker ps -l # 查看上一个容器
 docker ps -n 3 # 查看上3次运行的容器
 docker ps -lq # 只显示上一次的容器编号
 docker top # 容器内运行的进程
 
-
 docker start -i b9c025a4d557 # 已交互方式重启容器
-
 
 # 以ctrl+p+q退出后可以使用
 docker attach [容器id] # 进入退出后没有停止的容器
-docker exec -t [容器id] ls -l /tmp # 在容器外查询容器内命令
 
 docker kill [容器id] # 强制停止
 
-
-docker inspect [容器id] # 查看容器内的细节
-
 docker cp [容器id]:/tmp/yum.log ./ # 将容器内的数据拷贝到容器外
 docker cp ./index [容器id]:/tmp/ # 将容器外部的文件复制到容器内部
-
 
 # 暂停容器
 docker pause [容器id]
@@ -45,77 +27,12 @@ docker pause [容器id]
 # 暂停容器继续执行
 docker unpause [容器id]
 
-```
-
-### 全选操作
-
-```shell
-
 
 # 删除所有不使用的镜像
 docker image prune --force --all
 
 # 删除所有停止的容器
 docker container prune -f
-```
-
-### 容器数据卷
-
-容器数据卷主要有三种类型，host、anonymous和named：
-
-* 主机卷存在于Docker主机的文件系统中，用户自己置顶它的位置。 
-* 命名卷是Docker管理卷创建卷的位置的卷，但是它被赋予一个名称。 
-* 匿名卷类似于命名卷，名称由docker分配。
-
-数据卷挂载，主要有两种方式：
-
-* `-v`
-* `--volumes-from`
-
-#### 使用`-v`命令手动指定
-
-使用`-v`命令添加数据卷
-
-```shell
-docker run -it -v /[宿主机绝对路径目录]:/[容器内绝对路径目录] 镜像名
-docker run -it -v /[宿主机绝对路径目录]:/[容器内绝对路径目录]:ro 镜像名 # 容器内的目录只读不能写
-docker run -it -v /[宿主机绝对路径文件名]:/[容器内绝对路径文件名] 镜像名 # 可以将容器内的文件映射到本机上
-```
-
-查看容器数据卷是否加载成功使用`docker inspect`查看
-
-注意：
-
-* 导出的容器数据卷只能是文件夹，不能死单个文件。
-* 导出到宿主机上的文件夹，如果为空会对应清空容器里相应的文件夹。
-
-#### 命名卷操作
-
-```shell
-docker volume create v1 # 创建v1数据卷
-docker volume rm v1 # 移除v1数据卷
-docker inspect v1 # 查看v1数据卷的信息
-docker volume ls # 查看所有数据卷
-
-docker run it -v v1:/[容器内绝对路径目录] 镜像名 # 可以将命名数据卷映射到容器中
-```
-
-#### 数据卷容器
-
-命名的容器挂载数据卷，其他容器通过挂载这个(父容器)实现数据共享，挂载数据卷的容器，称之为数据卷容器。可以实现多个容器之间的数据共享。
-
-```shell
-docker run -it --name dc02 --volumes-from doc01 zzyy/centos # 根据父容器的数据卷创建子容器
-docker run -it -d --name superme_nginx -v /home/superme/docker_volumes/nginx/nginx.conf:/etc/nginx/nginx.conf --volumes-from superme -p 30080:80 nginx
-```
-
-### 常用`run`命令参数总结
-
-```shell
--it # 启动交互终端
---name # 起名
--v # 添加容器数据卷
--p # 映射宿主机端口和容器端口
 ```
 
 ## DockerFile
@@ -216,46 +133,7 @@ EXPOSE 8080
 CMD /usr/local/apache/startup.sh && tail -F /usr/local/apache/bin/logs/log.out
 ```
 
-## NetWork
-
-<img src="https://www.kaitoy.xyz/images/docker_network.jpg" alt="docker net" style="zoom:67%;" />
-
-```sh
-docker network ls # 查看docker网络
-docker network inspect 33ba37cc9147 # 查看docker网络属性
-
-docker run --link [链接容器名] [镜像名] # 创建容器时，将容器链接到已有容器中
-docker network create -d bridge  my-bridge # 创建docker的bridge
-
-docker run --link [bridge器名] [镜像名] # 指定容器创建时链接的bridge
-
-docker network connect my-bridge [容器名] # 将容器链接到指定的bridge上
-```
-
-* 如果容器链接到用户自定义的bridge上，默认是link的。
-* 容器可以链接到多个bridge上
-
 ## 安装常用软件
-
-### 安装mysql
-
-```shell
-docker run -p 123456:3306 --name mysql 
--v /zzyy/mysql/conf:/etc/mysql/conf.d 
--v /zzyy/mysql/logs:/logs
--v /zzyy/mysql/data:/var/lib/mysql
--e MYSQL_ROOT_PASSWORD=123456 -d mysql:5.6
-
-# 启动后进入容器
-docker exec -it mysql bash
-
-docker run --name mysql -e MYSQL_ROOT_PASSWORD=123456 -p 3306:3306 -d mysql
-
-http://10.138.2.161:10080/superme_django/superme_django.git
-http://10.138.2.161:10080/hughxusu/superme_web.git
-http://10.138.2.161:10080/superme_web/superme_web.git
-http://10.138.2.161:10080/photostars_web/photostars_web.git
-```
 
 ### 使用sebp/elk
 
@@ -269,18 +147,6 @@ sysctl -p
 
 # 目前使用版本容器命令
 sudo docker run -p 5601:5601 -p 9200:9200 -p 5044:5044 -v eplugins:/opt/elasticsearch/plugins -v edata:/var/lib/elasticsearch --name elk sebp/elk:662
-```
-
-### django
-
-```shell
-python manage.py runserver 0.0.0.0:8000 # 需要在0.0.0.0 ip 地址执行，宿主机ip
-```
-
-### nginx
-
-```shell
-docker run -it -d --name nginx -v /home/nginx/:/etc/nginx/conf.d -p 30080:80 nginx
 ```
 
 ### redis
