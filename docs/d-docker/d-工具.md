@@ -82,7 +82,7 @@ services:
     networks:
       - blog
       
-    # 是控制服务的启动与停止顺序
+    # 控制服务的启动与停止顺序
     depends_on:
       - mysql
 
