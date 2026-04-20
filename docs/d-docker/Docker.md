@@ -162,37 +162,5 @@ EXPOSE 8080
 CMD /usr/local/apache/startup.sh && tail -F /usr/local/apache/bin/logs/log.out
 ```
 
-## 安装常用软件
-
-### 使用sebp/elk
-
-* 说明文档<https://elk-docker.readthedocs.io/#persisting-log-data>
-
-```shell
-# 内存不足，修改虚拟内存，在/etc/sysctl.conf文件最后一行增加
-vm.max_map_count=262144
-# 执行命令
-sysctl -p
-
-# 目前使用版本容器命令
-sudo docker run -p 5601:5601 -p 9200:9200 -p 5044:5044 -v eplugins:/opt/elasticsearch/plugins -v edata:/var/lib/elasticsearch --name elk sebp/elk:662
-```
-
-### nginx
-
-```shell
-docker run -it -d --name nginx -v /home/nginx/:/etc/nginx/conf.d -p 30080:80 nginx
-```
-
-### redis
-
-```shell
-docker run --name redis -d -p 6379:6379 redis 
-```
-
-
-
-
-
 
 
