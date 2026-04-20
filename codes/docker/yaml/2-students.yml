@@ -1,0 +1,30 @@
+- name: tom
+  age: 18
+  lesson:
+    - math
+    - english
+
+- name: jane
+  age: 19
+  lesson:
+    - math
+    - science
+
+# [
+#   {
+#     "name": "tom",
+#     "age": 18,
+#     "lesson": [
+#       "math",
+#       "english"
+#     ]
+#   },
+#   {
+#     "name": "jane",
+#     "age": 19,
+#     "lesson": [
+#       "math",
+#       "science"
+#     ]
+#   }
+# ]

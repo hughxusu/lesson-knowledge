@@ -1,0 +1,21 @@
+# 学生信息
+name: tom
+age: 18
+is_male: true
+lesson:
+  - math
+  - english
+  - history
+
+# {
+#   "name": "tom",
+#   "age": 18,
+#   "is_male": true,
+#   "lesson": [
+#     "math",
+#     "english",
+#     "history"
+#   ]
+# }
+
+

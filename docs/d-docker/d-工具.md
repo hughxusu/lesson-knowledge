@@ -1,5 +1,139 @@
 # 容器编排与镜像制作
 
+## `yaml`语法
+
+Yaml是一种文本数据存储方式，类似于Josn文件，Yaml利用缩进来控制数据结构，可读性比Josn更强。
+
+* Yaml是一种所有编程语言可用的、友好的、数据序列化标准。
+* Yaml格式像一份“清单”，常用于设置配置文件等信息。
+
+Yaml的基本规则
+
+1. 大小写敏感。
+2. 使用缩进表示层级关系。
+3. 缩进时不能使用`tab`键，只能使用空格。
+4. 缩进的空格数量不重要，只要相同层级的元素左侧对齐即可。
+5. Yaml文件的后缀名可以是`.yaml`和`.yml`。
+
+Yaml的数据结构
+
+1. `object`（对象）：键值对的集合。
+2. `array`（数组）：一组顺序的序列。
+3. `scalars`（纯量）：单个不可拆分的值，包括：字符串、布尔值、整数、浮点数、`null`、日期等。
+
+1. 定义一个简单的`student.yaml`文件
+
+```yaml
+# 学生信息
+name: tom
+age: 18
+is_male: true
+lesson:
+  - math
+  - english
+  - history
+
+# {
+#   "name": "tom",
+#   "age": 18,
+#   "is_male": true,
+#   "lesson": [
+#     "math",
+#     "english",
+#     "history"
+#   ]
+# }
+```
+
+* Yaml文件中可以加入注释，以`#`开始，读取Yaml文件的工具会忽略注释。
+* `name: tom`表示一个键值对。
+* 数组中的每一项使用`-`表示。
+
+2. 直接定义一个数组
+
+```yaml
+- name: tom
+  age: 18
+  lesson:
+    - math
+    - english
+
+- name: jane
+  age: 19
+  lesson:
+    - math
+    - science
+
+# [
+#   {
+#     "name": "tom",
+#     "age": 18,
+#     "lesson": [
+#       "math",
+#       "english"
+#     ]
+#   },
+#   {
+#     "name": "jane",
+#     "age": 19,
+#     "lesson": [
+#       "math",
+#       "science"
+#     ]
+#   }
+# ]
+```
+
+3. 一个更复杂的文件结构
+
+```shell
+employee:
+  name: tom
+  is_male: true
+  birth_date: 1990-01-03 00:00:00
+  salary: 100000
+  location: ~
+  skill:
+    - fastapi
+    - docker
+    - vue
+    - sql
+
+  job:
+    frontend: vue
+    backend: fastapi
+
+  leaders: 
+    - group_leader=John
+    - project_manager=Jane
+
+# {
+#   "employee": {
+#     "name": "tom",
+#     "is_male": true,
+#     "birth_date": "1990-01-03 00:00:00",
+#     "salary": 100000,
+#     "location": null,
+#     "skill": [
+#       "fastapi",
+#       "docker",
+#       "vue",
+#       "sql"
+#     ],
+#     "job": {
+#       "frontend": "vue",
+#       "backend": "fastapi"
+#     },
+#     "leaders": [
+#       "group_leader": "John",
+#       "project_manager": "Jane"
+#     ]
+#   }
+# }
+```
+
+* `~`在Yaml文件中表示`null`数据。
+
 ## Docker Compose
 
 Docker Compose是一个用操作运行多容器的工具，它通过一个`compose.yaml` 来配置配置容器的服务、网络和卷。Mac和阿里云安装Docker的过程中已经默认安装的Docker Compose。
@@ -27,6 +161,8 @@ Docker Compose中常用的顶级元素
 * `volumes`需要创建的卷名。
 * `configs`以非敏感方式将配置文件注入到容器中。
 * `secrets`专门用于处理敏感信息。
+
+### Wordpress部署
 
 以Wordpress为例创建`compose.yaml`文件
 
@@ -109,8 +245,23 @@ docker compose -f compose.yaml up -d
 
 * `-d`后台启动全部容器。
 * `-f compose.yaml`使用哪个`.yaml`文件启动，如果省略直接调用文件夹下的`compose.yaml`。
+* 修改`compose.yaml`文件后，使用`docker compose up -d`重启容器，只有修改的容器会重启，其他容器保持不变。
 
 > [!warning]
 >
 > 1. 尽量使用Docker Compose来管理容器和网络名称。
 > 2. 不同的项目，使用不同的文件夹区分，文件夹下一般只保留一个`compose.yaml`文件
+
+移除所有容器和相关网络，但是不会移除相关的卷和文件夹
+
+```shell
+docker compose down
+docker compose down --rmi all -v
+```
+
+* `--rmi`移除容器的同时，移除镜像，需要指定镜像名，`all`表示移除所有相关镜像。
+* `-v`表示移除所有相关的卷。
+
+> [!warning]
+>
+> 这里是将容器全部移除，并不是简单的暂停。

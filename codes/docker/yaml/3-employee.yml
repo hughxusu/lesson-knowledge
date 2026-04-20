@@ -1,0 +1,43 @@
+employee:
+  name: tom
+  is_male: true
+  birth_date: 1990-01-03 00:00:00
+  salary: 100000
+  location: ~
+  skill:
+    - fastapi
+    - docker
+    - vue
+    - sql
+
+  job:
+    frontend: vue
+    backend: fastapi
+
+  leaders: 
+    - group_leader=John
+    - project_manager=Jane
+
+# {
+#   "employee": {
+#     "name": "tom",
+#     "is_male": true,
+#     "birth_date": "1990-01-03 00:00:00",
+#     "salary": 100000,
+#     "location": null,
+#     "skill": [
+#       "fastapi",
+#       "docker",
+#       "vue",
+#       "sql"
+#     ],
+#     "job": {
+#       "frontend": "vue",
+#       "backend": "fastapi"
+#     },
+#     "leaders": [
+#       "group_leader": "John",
+#       "project_manager": "Jane"
+#     ]
+#   }
+# }
