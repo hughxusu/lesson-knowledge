@@ -1,22 +1,5 @@
 # Docker安装
 
-## 镜像命令
-
-```shell
-docker rmi hello-world # 删除镜像，不指定删除最新版
-docker rmi -f hello-world:latest mysql:5.6 # 删除多个镜像
-docker rmi -f $(docker images -qa) # 删除全部镜像
-
-# 导出本地镜像
-docker save java > /home/java.tar.gz
-
-# 从本地文件导入镜像
-docker load < /home/java.tar.gz
-
-# 镜像重命名
-docker tag [原始镜像名] [新镜像名]
-```
-
 ## 容器命令
 
 ### 基本操作
@@ -74,80 +57,11 @@ docker commit -m '信息' [容器id] [生成image名称]
 ### 全选操作
 
 ```shell
-# 列出所有的容器 ID
-docker ps -aq
-
-# 停止所有的容器
-docker stop $(docker ps -aq)
-
-# 删除所有的容器
-docker rm $(docker ps -aq)
-
-
 # 删除所有不使用的镜像
 docker image prune --force --all
 
 # 删除所有停止的容器
 docker container prune -f
-```
-
-### 容器数据卷
-
-容器数据卷主要有三种类型，host、anonymous和named：
-
-* 主机卷存在于Docker主机的文件系统中，用户自己置顶它的位置。 
-* 命名卷是Docker管理卷创建卷的位置的卷，但是它被赋予一个名称。 
-* 匿名卷类似于命名卷，名称由docker分配。
-
-数据卷挂载，主要有两种方式：
-
-* `-v`
-* `--volumes-from`
-
-#### 使用`-v`命令手动指定
-
-使用`-v`命令添加数据卷
-
-```shell
-docker run -it -v /[宿主机绝对路径目录]:/[容器内绝对路径目录] 镜像名
-docker run -it -v /[宿主机绝对路径目录]:/[容器内绝对路径目录]:ro 镜像名 # 容器内的目录只读不能写
-docker run -it -v /[宿主机绝对路径文件名]:/[容器内绝对路径文件名] 镜像名 # 可以将容器内的文件映射到本机上
-```
-
-查看容器数据卷是否加载成功使用`docker inspect`查看
-
-注意：
-
-* 导出的容器数据卷只能是文件夹，不能死单个文件。
-* 导出到宿主机上的文件夹，如果为空会对应清空容器里相应的文件夹。
-
-#### 命名卷操作
-
-```shell
-docker volume create v1 # 创建v1数据卷
-docker volume rm v1 # 移除v1数据卷
-docker inspect v1 # 查看v1数据卷的信息
-docker volume ls # 查看所有数据卷
-
-docker run it -v v1:/[容器内绝对路径目录] 镜像名 # 可以将命名数据卷映射到容器中
-```
-
-#### 数据卷容器
-
-命名的容器挂载数据卷，其他容器通过挂载这个(父容器)实现数据共享，挂载数据卷的容器，称之为数据卷容器。可以实现多个容器之间的数据共享。
-
-```shell
-docker run -it --name dc02 --volumes-from doc01 zzyy/centos # 根据父容器的数据卷创建子容器
-docker run -it -d --name superme_nginx -v /home/superme/docker_volumes/nginx/nginx.conf:/etc/nginx/nginx.conf --volumes-from superme -p 30080:80 nginx
-```
-
-### 常用`run`命令参数总结
-
-```shell
--it # 启动交互终端
---name # 起名
--v # 添加容器数据卷
--p # 映射宿主机端口和容器端口
 ```
 
 ## DockerFile
@@ -276,70 +190,9 @@ docker run -it -d --name nginx -v /home/nginx/:/etc/nginx/conf.d -p 30080:80 ngi
 docker run --name redis -d -p 6379:6379 redis 
 ```
 
-## Docker Compose
 
-docker容器的的批处理文件，可以通过一个yml文件定义多个容器的docker应用。通过yml文件管理多个docker。docker-compose包含3个概念：services、Networks、Volumes。
 
-### Services
 
-一个service代表以container。
 
-### Volumes
 
-映射docker的数据卷
-
-### networks
-
-容器之间的链接
-
-### 安装
-
-```shell
-# 下载docker-compose
-sudo curl -L "https://github.com/docker/compose/releases/download/1.24.0/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
-
-# 修改权限
-sudo chmod +x /usr/local/bin/docker-compose
-```
-
-### 使用
-
-* `docker-compose`中很多命令与docker类似
-
-```shell
-docker-compose --version # 查看版本
-
-docker-compose up # 启动默认dockercompose
-docker-compose up -d # 启动并后台执行
-docker-compose -f [文件名] up # 从指定文件启动dockercompose
-docker-compose ps # 查看当前所有服务
-docker-compose stop # 停止
-docker-compose down # 停止删除
-```
-
-### yml文件
-
-```yml
-version: '3' # 版本
-services: # 服务
-	# django服务
-  web:
-    image: registry.cn-beijing.aliyuncs.com/hughxusu/ubuntu_anaconda:superme
-    volumes:
-      - ./apps:/apps
-    command: /opt/anaconda3/envs/superme/bin/uwsgi -i /apps/superme/uwsgi.ini
-	# nginx服务
-  nginx:
-    image: nginx
-    ports:
-      - "30080:80"
-    volumes:
-      - ./apps/superme/static:/usr/share/nginx/html/static
-      - ./nginx:/etc/nginx/conf.d/
-    links: # 应dns域名链接网络
-      - web
-    depends_on:
-      - web
-    restart: always
-```
 

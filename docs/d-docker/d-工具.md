@@ -143,7 +143,7 @@ Docker Compose是一个用操作运行多容器的工具，它通过一个`compo
 * 可以多部分应用扩容。
 * 可以统一清理容器和数据卷。
 
-查看Docker Compose的版本
+Docker Compose的许多命令与Docker类似，查看Docker Compose的版本
 
 ```shell
 docker compose version  # 旧版本的命令docker-compose --version
@@ -251,6 +251,12 @@ docker compose -f compose.yaml up -d
 >
 > 1. 尽量使用Docker Compose来管理容器和网络名称。
 > 2. 不同的项目，使用不同的文件夹区分，文件夹下一般只保留一个`compose.yaml`文件
+
+停止运行容器
+
+```shell
+docker compose stop
+```
 
 移除所有容器和相关网络，但是不会移除相关的卷和文件夹
 
